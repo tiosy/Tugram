@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331283C21AD4652C00DFC9C2 /* TugramModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 331283B31AD4652C00DFC9C2 /* TugramModel.xcdatamodel */; };
+		331283C31AD4652C00DFC9C2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283B51AD4652C00DFC9C2 /* User.m */; };
+		331283C41AD4652C00DFC9C2 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283B71AD4652C00DFC9C2 /* Photo.m */; };
+		331283C51AD4652C00DFC9C2 /* Like.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283B91AD4652C00DFC9C2 /* Like.m */; };
+		331283C61AD4652C00DFC9C2 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283BB1AD4652C00DFC9C2 /* Comment.m */; };
+		331283C71AD4652C00DFC9C2 /* Following.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283BD1AD4652C00DFC9C2 /* Following.m */; };
+		331283C81AD4652C00DFC9C2 /* Follower.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283BF1AD4652C00DFC9C2 /* Follower.m */; };
+		331283C91AD4652C00DFC9C2 /* Likedphoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283C11AD4652C00DFC9C2 /* Likedphoto.m */; };
 		6E2105B21AD36F7600583B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B11AD36F7600583B4B /* main.m */; };
 		6E2105B51AD36F7600583B4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B41AD36F7600583B4B /* AppDelegate.m */; };
-		6E2105B81AD36F7600583B4B /* Tugram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B61AD36F7600583B4B /* Tugram.xcdatamodeld */; };
 		6E2105BB1AD36F7600583B4B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105BA1AD36F7600583B4B /* ViewController.m */; };
 		6E2105BE1AD36F7600583B4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2105BC1AD36F7600583B4B /* Main.storyboard */; };
 		6E2105C01AD36F7600583B4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2105BF1AD36F7600583B4B /* Images.xcassets */; };
@@ -41,12 +48,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		331283B31AD4652C00DFC9C2 /* TugramModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TugramModel.xcdatamodel; sourceTree = "<group>"; };
+		331283B41AD4652C00DFC9C2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		331283B51AD4652C00DFC9C2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		331283B61AD4652C00DFC9C2 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		331283B71AD4652C00DFC9C2 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		331283B81AD4652C00DFC9C2 /* Like.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Like.h; sourceTree = "<group>"; };
+		331283B91AD4652C00DFC9C2 /* Like.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Like.m; sourceTree = "<group>"; };
+		331283BA1AD4652C00DFC9C2 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		331283BB1AD4652C00DFC9C2 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		331283BC1AD4652C00DFC9C2 /* Following.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Following.h; sourceTree = "<group>"; };
+		331283BD1AD4652C00DFC9C2 /* Following.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Following.m; sourceTree = "<group>"; };
+		331283BE1AD4652C00DFC9C2 /* Follower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follower.h; sourceTree = "<group>"; };
+		331283BF1AD4652C00DFC9C2 /* Follower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Follower.m; sourceTree = "<group>"; };
+		331283C01AD4652C00DFC9C2 /* Likedphoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Likedphoto.h; sourceTree = "<group>"; };
+		331283C11AD4652C00DFC9C2 /* Likedphoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Likedphoto.m; sourceTree = "<group>"; };
 		6E2105AC1AD36F7600583B4B /* Tugram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tugram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2105B01AD36F7600583B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E2105B11AD36F7600583B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E2105B31AD36F7600583B4B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E2105B41AD36F7600583B4B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6E2105B71AD36F7600583B4B /* Tugram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tugram.xcdatamodel; sourceTree = "<group>"; };
 		6E2105B91AD36F7600583B4B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6E2105BA1AD36F7600583B4B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6E2105BD1AD36F7600583B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,7 +151,21 @@
 				6E2105BC1AD36F7600583B4B /* Main.storyboard */,
 				6E2105BF1AD36F7600583B4B /* Images.xcassets */,
 				6E2105C11AD36F7600583B4B /* LaunchScreen.xib */,
-				6E2105B61AD36F7600583B4B /* Tugram.xcdatamodeld */,
+				331283B31AD4652C00DFC9C2 /* TugramModel.xcdatamodel */,
+				331283B41AD4652C00DFC9C2 /* User.h */,
+				331283B51AD4652C00DFC9C2 /* User.m */,
+				331283B61AD4652C00DFC9C2 /* Photo.h */,
+				331283B71AD4652C00DFC9C2 /* Photo.m */,
+				331283B81AD4652C00DFC9C2 /* Like.h */,
+				331283B91AD4652C00DFC9C2 /* Like.m */,
+				331283BA1AD4652C00DFC9C2 /* Comment.h */,
+				331283BB1AD4652C00DFC9C2 /* Comment.m */,
+				331283BC1AD4652C00DFC9C2 /* Following.h */,
+				331283BD1AD4652C00DFC9C2 /* Following.m */,
+				331283BE1AD4652C00DFC9C2 /* Follower.h */,
+				331283BF1AD4652C00DFC9C2 /* Follower.m */,
+				331283C01AD4652C00DFC9C2 /* Likedphoto.h */,
+				331283C11AD4652C00DFC9C2 /* Likedphoto.m */,
 				6E2105AF1AD36F7600583B4B /* Supporting Files */,
 			);
 			path = Tugram;
@@ -282,10 +317,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E2105B81AD36F7600583B4B /* Tugram.xcdatamodeld in Sources */,
+				331283C41AD4652C00DFC9C2 /* Photo.m in Sources */,
+				331283C51AD4652C00DFC9C2 /* Like.m in Sources */,
+				331283C31AD4652C00DFC9C2 /* User.m in Sources */,
+				331283C91AD4652C00DFC9C2 /* Likedphoto.m in Sources */,
+				331283C21AD4652C00DFC9C2 /* TugramModel.xcdatamodel in Sources */,
+				331283C71AD4652C00DFC9C2 /* Following.m in Sources */,
 				6E2105B51AD36F7600583B4B /* AppDelegate.m in Sources */,
 				6E2105BB1AD36F7600583B4B /* ViewController.m in Sources */,
+				331283C81AD4652C00DFC9C2 /* Follower.m in Sources */,
 				6E2105B21AD36F7600583B4B /* main.m in Sources */,
+				331283C61AD4652C00DFC9C2 /* Comment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,19 +540,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		6E2105B61AD36F7600583B4B /* Tugram.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6E2105B71AD36F7600583B4B /* Tugram.xcdatamodel */,
-			);
-			currentVersion = 6E2105B71AD36F7600583B4B /* Tugram.xcdatamodel */;
-			path = Tugram.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6E2105A41AD36F7600583B4B /* Project object */;
 }
