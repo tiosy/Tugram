@@ -1,22 +1,24 @@
 //
 //  Photo.h
-//  ParseStarterProject
+//  Tugram
 //
-//  Created by Justin Haar on 4/7/15.
-//
+//  Created by tim on 4/7/15.
+//  Copyright (c) 2015 Timothy Yeh. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Comment, Like, User;
+@class Comment, User;
 
 @interface Photo : NSManagedObject
 
-@property (nonatomic, retain) NSDate * time;
+@property (nonatomic, retain) NSDate * timestamp;
+@property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSData * thumbnail;
 @property (nonatomic, retain) NSSet *comments;
-@property (nonatomic, retain) NSSet *likes;
-@property (nonatomic, retain) User *user;
+@property (nonatomic, retain) NSSet *likedBy;
+@property (nonatomic, retain) User *uploadedByUser;
 @end
 
 @interface Photo (CoreDataGeneratedAccessors)
@@ -26,9 +28,9 @@
 - (void)addComments:(NSSet *)values;
 - (void)removeComments:(NSSet *)values;
 
-- (void)addLikesObject:(Like *)value;
-- (void)removeLikesObject:(Like *)value;
-- (void)addLikes:(NSSet *)values;
-- (void)removeLikes:(NSSet *)values;
+- (void)addLikedByObject:(User *)value;
+- (void)removeLikedByObject:(User *)value;
+- (void)addLikedBy:(NSSet *)values;
+- (void)removeLikedBy:(NSSet *)values;
 
 @end

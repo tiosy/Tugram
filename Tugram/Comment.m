@@ -1,9 +1,9 @@
 //
 //  Comment.m
-//  ParseStarterProject
+//  Tugram
 //
-//  Created by Justin Haar on 4/7/15.
-//
+//  Created by tim on 4/7/15.
+//  Copyright (c) 2015 Timothy Yeh. All rights reserved.
 //
 
 #import "Comment.h"
@@ -14,8 +14,8 @@
 @implementation Comment
 
 @dynamic text;
-@dynamic time;
-@dynamic photo;
-@dynamic user;
+@dynamic timestamp;
+@dynamic forPhoto;
+@dynamic createdByUser;
 
 @end

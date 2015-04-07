@@ -1,18 +1,15 @@
 //
 //  User.m
-//  ParseStarterProject
+//  Tugram
 //
-//  Created by Justin Haar on 4/7/15.
-//
+//  Created by tim on 4/7/15.
+//  Copyright (c) 2015 Timothy Yeh. All rights reserved.
 //
 
 #import "User.h"
 #import "Comment.h"
-#import "Follower.h"
-#import "Following.h"
-#import "Like.h"
-#import "Likedphoto.h"
 #import "Photo.h"
+#import "User.h"
 
 
 @implementation User
@@ -20,13 +17,12 @@
 @dynamic email;
 @dynamic name;
 @dynamic password;
-@dynamic username;
 @dynamic profileimage;
+@dynamic username;
 @dynamic comments;
 @dynamic followers;
-@dynamic followings;
-@dynamic likedphotos;
+@dynamic following;
 @dynamic likes;
-@dynamic photos;
+@dynamic myPhotos;
 
 @end

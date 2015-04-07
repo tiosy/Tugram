@@ -1,9 +1,9 @@
 //
 //  Comment.h
-//  ParseStarterProject
+//  Tugram
 //
-//  Created by Justin Haar on 4/7/15.
-//
+//  Created by tim on 4/7/15.
+//  Copyright (c) 2015 Timothy Yeh. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,8 +14,8 @@
 @interface Comment : NSManagedObject
 
 @property (nonatomic, retain) NSString * text;
-@property (nonatomic, retain) NSDate * time;
-@property (nonatomic, retain) Photo *photo;
-@property (nonatomic, retain) User *user;
+@property (nonatomic, retain) NSDate * timestamp;
+@property (nonatomic, retain) Photo *forPhoto;
+@property (nonatomic, retain) User *createdByUser;
 
 @end

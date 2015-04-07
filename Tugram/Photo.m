@@ -1,22 +1,23 @@
 //
 //  Photo.m
-//  ParseStarterProject
+//  Tugram
 //
-//  Created by Justin Haar on 4/7/15.
-//
+//  Created by tim on 4/7/15.
+//  Copyright (c) 2015 Timothy Yeh. All rights reserved.
 //
 
 #import "Photo.h"
 #import "Comment.h"
-#import "Like.h"
 #import "User.h"
 
 
 @implementation Photo
 
-@dynamic time;
+@dynamic timestamp;
+@dynamic image;
+@dynamic thumbnail;
 @dynamic comments;
-@dynamic likes;
-@dynamic user;
+@dynamic likedBy;
+@dynamic uploadedByUser;
 
 @end
