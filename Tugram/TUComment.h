@@ -8,6 +8,15 @@
 
 #import <Parse/Parse.h>
 
-@interface TUComment : PFObject
+@class TUPFUser;
+@class TUPhoto;
+
+@interface TUComment : PFObject<PFSubclassing>
+
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) TUPhoto *forPhoto;
+@property (nonatomic, strong) TUPFUser *byUser;
+
++ (NSString *)parseClassName;
 
 @end

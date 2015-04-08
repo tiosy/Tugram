@@ -9,6 +9,11 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 
+#import "TUPFUser.h"
+#import "TUPhoto.h"
+#import "TUComment.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -21,6 +26,11 @@
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
+
+    //[...registerSubclass]
+    [TUPFUser load];
+    [TUPhoto load];
+    [TUComment load];
 
     // Initialize Parse.
     [Parse setApplicationId:@"ztVHZJKzee2GdwStNIfQk0vhg0lAV8z1BP58J9Wm"
