@@ -34,6 +34,7 @@
 		6E2106481AD505C300583B4B /* TUPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2106471AD505C300583B4B /* TUPhoto.m */; };
 		6E21064B1AD505F000583B4B /* TUComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21064A1AD505F000583B4B /* TUComment.m */; };
 		6E21064E1AD5078D00583B4B /* TUPFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21064D1AD5078D00583B4B /* TUPFUser.m */; };
+		6E46EF2F1AD573CE00561B2B /* TUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E46EF2E1AD573CE00561B2B /* TUUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		6E21064A1AD505F000583B4B /* TUComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUComment.m; sourceTree = "<group>"; };
 		6E21064C1AD5078D00583B4B /* TUPFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPFUser.h; sourceTree = "<group>"; };
 		6E21064D1AD5078D00583B4B /* TUPFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUPFUser.m; sourceTree = "<group>"; };
+		6E46EF2D1AD573CE00561B2B /* TUUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUUser.h; sourceTree = "<group>"; };
+		6E46EF2E1AD573CE00561B2B /* TUUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 			children = (
 				6E21064C1AD5078D00583B4B /* TUPFUser.h */,
 				6E21064D1AD5078D00583B4B /* TUPFUser.m */,
+				6E46EF2D1AD573CE00561B2B /* TUUser.h */,
+				6E46EF2E1AD573CE00561B2B /* TUUser.m */,
 				6E2106461AD505C300583B4B /* TUPhoto.h */,
 				6E2106471AD505C300583B4B /* TUPhoto.m */,
 				6E2106491AD505F000583B4B /* TUComment.h */,
@@ -330,6 +335,7 @@
 				6E2105BB1AD36F7600583B4B /* ViewController.m in Sources */,
 				6E21063B1AD47C6900583B4B /* Photo.m in Sources */,
 				6E2105B21AD36F7600583B4B /* main.m in Sources */,
+				6E46EF2F1AD573CE00561B2B /* TUUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
