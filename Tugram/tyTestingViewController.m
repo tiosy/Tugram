@@ -40,6 +40,7 @@
 //    TUUser *user = [TUUser object];
 //    user.username = @"jackson";
 //    user.fullName = @"michael Jackson";
+//    user.email = @"mjackson@google.com";
 //
 //    UIImage *image = [UIImage imageNamed:@"person"];
 //    NSData *imageData = UIImagePNGRepresentation(image);
