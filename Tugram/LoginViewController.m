@@ -1,28 +1,33 @@
 //
-//  LikesViewController.m
+//  LoginViewController.m
 //  Tugram
 //
 //  Created by Justin Haar on 4/7/15.
 //  Copyright (c) 2015 Timothy Yeh. All rights reserved.
 //
 
-#import "LikesViewController.h"
+#import "LoginViewController.h"
 
-@interface LikesViewController ()
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
-@implementation LikesViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)onSignUp:(UIButton *)sender {
+}
+
+
+- (IBAction)onLogIn:(UIButton *)sender {
 }
 
 /*

@@ -9,6 +9,8 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -33,5 +35,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)followersButton:(UIButton *)sender {
+}
+- (IBAction)followingButton:(UIButton *)sender {
+}
+- (IBAction)editProfileButton:(UIButton *)sender {
+}
+- (IBAction)segmentedControl:(UISegmentedControl *)sender {
+}
 
 @end

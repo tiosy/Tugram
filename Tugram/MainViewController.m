@@ -10,6 +10,14 @@
 #import <Parse/Parse.h>
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
+//@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
+//@property (weak, nonatomic) IBOutlet UIButton *usernameButton;
+//@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+//@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+//@property (weak, nonatomic) IBOutlet UIButton *likeCountButton;
+//@property (weak, nonatomic) IBOutlet UITextView *commentsTextField;
+//@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+//@property (weak, nonatomic) IBOutlet UIButton *commentButton;
 
 @end
 

@@ -20,6 +20,7 @@
 		331283E11AD4A95E00DFC9C2 /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E01AD4A95E00DFC9C2 /* PictureViewController.m */; };
 		331283E41AD4A96B00DFC9C2 /* LikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E31AD4A96B00DFC9C2 /* LikesViewController.m */; };
 		331283E71AD4A98200DFC9C2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E61AD4A98200DFC9C2 /* ProfileViewController.m */; };
+		331283EA1AD4B3FD00DFC9C2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */; };
 		6E2105B21AD36F7600583B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B11AD36F7600583B4B /* main.m */; };
 		6E2105B51AD36F7600583B4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B41AD36F7600583B4B /* AppDelegate.m */; };
 		6E2105BB1AD36F7600583B4B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105BA1AD36F7600583B4B /* MainViewController.m */; };
@@ -78,6 +79,8 @@
 		331283E31AD4A96B00DFC9C2 /* LikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikesViewController.m; sourceTree = "<group>"; };
 		331283E51AD4A98200DFC9C2 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		331283E61AD4A98200DFC9C2 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		331283E81AD4B3FD00DFC9C2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6E2105AC1AD36F7600583B4B /* Tugram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tugram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2105B01AD36F7600583B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E2105B11AD36F7600583B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,13 +114,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2105E91AD3A72300583B4B /* MobileCoreServices.framework in Frameworks */,
 				6E2105F51AD3A7C800583B4B /* libsqlite3.dylib in Frameworks */,
 				6E2105F31AD3A79800583B4B /* libz.dylib in Frameworks */,
 				6E2105F11AD3A77C00583B4B /* SystemConfiguration.framework in Frameworks */,
 				6E2105EF1AD3A75500583B4B /* StoreKit.framework in Frameworks */,
 				6E2105ED1AD3A74600583B4B /* Security.framework in Frameworks */,
 				6E2105EB1AD3A73500583B4B /* QuartzCore.framework in Frameworks */,
-				6E2105E91AD3A72300583B4B /* MobileCoreServices.framework in Frameworks */,
 				6E2105E71AD3A70F00583B4B /* CoreLocation.framework in Frameworks */,
 				6E2105E51AD3A6FB00583B4B /* CoreGraphics.framework in Frameworks */,
 				6E2105E31AD3A6EC00583B4B /* CFNetwork.framework in Frameworks */,
@@ -161,6 +164,9 @@
 			children = (
 				6E2105B31AD36F7600583B4B /* AppDelegate.h */,
 				6E2105B41AD36F7600583B4B /* AppDelegate.m */,
+				6E2105BC1AD36F7600583B4B /* Main.storyboard */,
+				331283E81AD4B3FD00DFC9C2 /* LoginViewController.h */,
+				331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */,
 				6E2105B91AD36F7600583B4B /* MainViewController.h */,
 				6E2105BA1AD36F7600583B4B /* MainViewController.m */,
 				331283DC1AD4A94D00DFC9C2 /* SearchViewController.h */,
@@ -171,7 +177,6 @@
 				331283E31AD4A96B00DFC9C2 /* LikesViewController.m */,
 				331283E51AD4A98200DFC9C2 /* ProfileViewController.h */,
 				331283E61AD4A98200DFC9C2 /* ProfileViewController.m */,
-				6E2105BC1AD36F7600583B4B /* Main.storyboard */,
 				331283CD1AD487A600DFC9C2 /* ImageCellTableViewCell.h */,
 				331283CE1AD487A600DFC9C2 /* ImageCellTableViewCell.m */,
 				6E2105BF1AD36F7600583B4B /* Images.xcassets */,
@@ -349,6 +354,7 @@
 				331283E11AD4A95E00DFC9C2 /* PictureViewController.m in Sources */,
 				331283C31AD4652C00DFC9C2 /* User.m in Sources */,
 				331283E41AD4A96B00DFC9C2 /* LikesViewController.m in Sources */,
+				331283EA1AD4B3FD00DFC9C2 /* LoginViewController.m in Sources */,
 				331283C91AD4652C00DFC9C2 /* Likedphoto.m in Sources */,
 				331283C21AD4652C00DFC9C2 /* TugramModel.xcdatamodel in Sources */,
 				331283CF1AD487A600DFC9C2 /* ImageCellTableViewCell.m in Sources */,
