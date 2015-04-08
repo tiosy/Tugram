@@ -31,6 +31,9 @@
 		6E21063B1AD47C6900583B4B /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21063A1AD47C6900583B4B /* Photo.m */; };
 		6E21063E1AD47C6900583B4B /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21063D1AD47C6900583B4B /* Comment.m */; };
 		6E2106411AD47C6900583B4B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2106401AD47C6900583B4B /* User.m */; };
+		6E2106481AD505C300583B4B /* TUPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2106471AD505C300583B4B /* TUPhoto.m */; };
+		6E21064B1AD505F000583B4B /* TUComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21064A1AD505F000583B4B /* TUComment.m */; };
+		6E21064E1AD5078D00583B4B /* TUPFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21064D1AD5078D00583B4B /* TUPFUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,12 @@
 		6E21063D1AD47C6900583B4B /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		6E21063F1AD47C6900583B4B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		6E2106401AD47C6900583B4B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6E2106461AD505C300583B4B /* TUPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPhoto.h; sourceTree = "<group>"; };
+		6E2106471AD505C300583B4B /* TUPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUPhoto.m; sourceTree = "<group>"; };
+		6E2106491AD505F000583B4B /* TUComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUComment.h; sourceTree = "<group>"; };
+		6E21064A1AD505F000583B4B /* TUComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUComment.m; sourceTree = "<group>"; };
+		6E21064C1AD5078D00583B4B /* TUPFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUPFUser.h; sourceTree = "<group>"; };
+		6E21064D1AD5078D00583B4B /* TUPFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUPFUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +141,7 @@
 		6E2105AE1AD36F7600583B4B /* Tugram */ = {
 			isa = PBXGroup;
 			children = (
+				6E2106451AD5057C00583B4B /* Model */,
 				6E2105B31AD36F7600583B4B /* AppDelegate.h */,
 				6E2105B41AD36F7600583B4B /* AppDelegate.m */,
 				6E2105B91AD36F7600583B4B /* ViewController.h */,
@@ -195,6 +205,19 @@
 				6E2105F41AD3A7C800583B4B /* libsqlite3.dylib */,
 			);
 			name = frameworks;
+			sourceTree = "<group>";
+		};
+		6E2106451AD5057C00583B4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E21064C1AD5078D00583B4B /* TUPFUser.h */,
+				6E21064D1AD5078D00583B4B /* TUPFUser.m */,
+				6E2106461AD505C300583B4B /* TUPhoto.h */,
+				6E2106471AD505C300583B4B /* TUPhoto.m */,
+				6E2106491AD505F000583B4B /* TUComment.h */,
+				6E21064A1AD505F000583B4B /* TUComment.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,8 +321,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				331283C21AD4652C00DFC9C2 /* TugramModel.xcdatamodel in Sources */,
+				6E21064E1AD5078D00583B4B /* TUPFUser.m in Sources */,
 				6E2106411AD47C6900583B4B /* User.m in Sources */,
 				6E21063E1AD47C6900583B4B /* Comment.m in Sources */,
+				6E21064B1AD505F000583B4B /* TUComment.m in Sources */,
+				6E2106481AD505C300583B4B /* TUPhoto.m in Sources */,
 				6E2105B51AD36F7600583B4B /* AppDelegate.m in Sources */,
 				6E2105BB1AD36F7600583B4B /* ViewController.m in Sources */,
 				6E21063B1AD47C6900583B4B /* Photo.m in Sources */,
