@@ -6,21 +6,21 @@
 //  Copyright (c) 2015 Timothy Yeh. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "tyTestingViewController.h"
 #import <Parse/Parse.h>
 
 #import "TUUser.h"
 #import "TUPhoto.h"
 #import "TUComment.h"
 
-@interface ViewController ()
+@interface tyTestingViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelFullName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet UILabel *labelEmail;
 
 @end
 
-@implementation ViewController
+@implementation tyTestingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
