@@ -7,20 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		331283C21AD4652C00DFC9C2 /* TugramModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 331283B31AD4652C00DFC9C2 /* TugramModel.xcdatamodel */; };
-		331283C31AD4652C00DFC9C2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283B51AD4652C00DFC9C2 /* User.m */; };
-		331283C41AD4652C00DFC9C2 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283B71AD4652C00DFC9C2 /* Photo.m */; };
-		331283C51AD4652C00DFC9C2 /* Like.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283B91AD4652C00DFC9C2 /* Like.m */; };
-		331283C61AD4652C00DFC9C2 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283BB1AD4652C00DFC9C2 /* Comment.m */; };
-		331283C71AD4652C00DFC9C2 /* Following.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283BD1AD4652C00DFC9C2 /* Following.m */; };
-		331283C81AD4652C00DFC9C2 /* Follower.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283BF1AD4652C00DFC9C2 /* Follower.m */; };
-		331283C91AD4652C00DFC9C2 /* Likedphoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283C11AD4652C00DFC9C2 /* Likedphoto.m */; };
 		331283CF1AD487A600DFC9C2 /* ImageCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283CE1AD487A600DFC9C2 /* ImageCellTableViewCell.m */; };
 		331283DE1AD4A94D00DFC9C2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283DD1AD4A94D00DFC9C2 /* SearchViewController.m */; };
 		331283E11AD4A95E00DFC9C2 /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E01AD4A95E00DFC9C2 /* PictureViewController.m */; };
 		331283E41AD4A96B00DFC9C2 /* LikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E31AD4A96B00DFC9C2 /* LikesViewController.m */; };
 		331283E71AD4A98200DFC9C2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E61AD4A98200DFC9C2 /* ProfileViewController.m */; };
 		331283EA1AD4B3FD00DFC9C2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */; };
+		33DC31461AD648FC00521403 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DC31451AD648FC00521403 /* CommentsViewController.m */; };
 		6E2105B21AD36F7600583B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B11AD36F7600583B4B /* main.m */; };
 		6E2105B51AD36F7600583B4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B41AD36F7600583B4B /* AppDelegate.m */; };
 		6E2105BB1AD36F7600583B4B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105BA1AD36F7600583B4B /* MainViewController.m */; };
@@ -54,21 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		331283B31AD4652C00DFC9C2 /* TugramModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TugramModel.xcdatamodel; sourceTree = "<group>"; };
-		331283B41AD4652C00DFC9C2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		331283B51AD4652C00DFC9C2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		331283B61AD4652C00DFC9C2 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		331283B71AD4652C00DFC9C2 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
-		331283B81AD4652C00DFC9C2 /* Like.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Like.h; sourceTree = "<group>"; };
-		331283B91AD4652C00DFC9C2 /* Like.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Like.m; sourceTree = "<group>"; };
-		331283BA1AD4652C00DFC9C2 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
-		331283BB1AD4652C00DFC9C2 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
-		331283BC1AD4652C00DFC9C2 /* Following.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Following.h; sourceTree = "<group>"; };
-		331283BD1AD4652C00DFC9C2 /* Following.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Following.m; sourceTree = "<group>"; };
-		331283BE1AD4652C00DFC9C2 /* Follower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follower.h; sourceTree = "<group>"; };
-		331283BF1AD4652C00DFC9C2 /* Follower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Follower.m; sourceTree = "<group>"; };
-		331283C01AD4652C00DFC9C2 /* Likedphoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Likedphoto.h; sourceTree = "<group>"; };
-		331283C11AD4652C00DFC9C2 /* Likedphoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Likedphoto.m; sourceTree = "<group>"; };
 		331283CD1AD487A600DFC9C2 /* ImageCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCellTableViewCell.h; sourceTree = "<group>"; };
 		331283CE1AD487A600DFC9C2 /* ImageCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCellTableViewCell.m; sourceTree = "<group>"; };
 		331283DC1AD4A94D00DFC9C2 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -81,6 +59,8 @@
 		331283E61AD4A98200DFC9C2 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		331283E81AD4B3FD00DFC9C2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		33DC31441AD648FC00521403 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		33DC31451AD648FC00521403 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		6E2105AC1AD36F7600583B4B /* Tugram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tugram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2105B01AD36F7600583B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E2105B11AD36F7600583B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,6 +149,8 @@
 				331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */,
 				6E2105B91AD36F7600583B4B /* MainViewController.h */,
 				6E2105BA1AD36F7600583B4B /* MainViewController.m */,
+				33DC31441AD648FC00521403 /* CommentsViewController.h */,
+				33DC31451AD648FC00521403 /* CommentsViewController.m */,
 				331283DC1AD4A94D00DFC9C2 /* SearchViewController.h */,
 				331283DD1AD4A94D00DFC9C2 /* SearchViewController.m */,
 				331283DF1AD4A95E00DFC9C2 /* PictureViewController.h */,
@@ -181,21 +163,6 @@
 				331283CE1AD487A600DFC9C2 /* ImageCellTableViewCell.m */,
 				6E2105BF1AD36F7600583B4B /* Images.xcassets */,
 				6E2105C11AD36F7600583B4B /* LaunchScreen.xib */,
-				331283B31AD4652C00DFC9C2 /* TugramModel.xcdatamodel */,
-				331283B41AD4652C00DFC9C2 /* User.h */,
-				331283B51AD4652C00DFC9C2 /* User.m */,
-				331283B61AD4652C00DFC9C2 /* Photo.h */,
-				331283B71AD4652C00DFC9C2 /* Photo.m */,
-				331283B81AD4652C00DFC9C2 /* Like.h */,
-				331283B91AD4652C00DFC9C2 /* Like.m */,
-				331283BA1AD4652C00DFC9C2 /* Comment.h */,
-				331283BB1AD4652C00DFC9C2 /* Comment.m */,
-				331283BC1AD4652C00DFC9C2 /* Following.h */,
-				331283BD1AD4652C00DFC9C2 /* Following.m */,
-				331283BE1AD4652C00DFC9C2 /* Follower.h */,
-				331283BF1AD4652C00DFC9C2 /* Follower.m */,
-				331283C01AD4652C00DFC9C2 /* Likedphoto.h */,
-				331283C11AD4652C00DFC9C2 /* Likedphoto.m */,
 				6E2105AF1AD36F7600583B4B /* Supporting Files */,
 			);
 			path = Tugram;
@@ -347,23 +314,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				331283C41AD4652C00DFC9C2 /* Photo.m in Sources */,
 				331283DE1AD4A94D00DFC9C2 /* SearchViewController.m in Sources */,
 				331283E71AD4A98200DFC9C2 /* ProfileViewController.m in Sources */,
-				331283C51AD4652C00DFC9C2 /* Like.m in Sources */,
 				331283E11AD4A95E00DFC9C2 /* PictureViewController.m in Sources */,
-				331283C31AD4652C00DFC9C2 /* User.m in Sources */,
 				331283E41AD4A96B00DFC9C2 /* LikesViewController.m in Sources */,
 				331283EA1AD4B3FD00DFC9C2 /* LoginViewController.m in Sources */,
-				331283C91AD4652C00DFC9C2 /* Likedphoto.m in Sources */,
-				331283C21AD4652C00DFC9C2 /* TugramModel.xcdatamodel in Sources */,
 				331283CF1AD487A600DFC9C2 /* ImageCellTableViewCell.m in Sources */,
-				331283C71AD4652C00DFC9C2 /* Following.m in Sources */,
 				6E2105B51AD36F7600583B4B /* AppDelegate.m in Sources */,
 				6E2105BB1AD36F7600583B4B /* MainViewController.m in Sources */,
-				331283C81AD4652C00DFC9C2 /* Follower.m in Sources */,
+				33DC31461AD648FC00521403 /* CommentsViewController.m in Sources */,
 				6E2105B21AD36F7600583B4B /* main.m in Sources */,
-				331283C61AD4652C00DFC9C2 /* Comment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

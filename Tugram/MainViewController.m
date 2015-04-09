@@ -8,16 +8,13 @@
 
 #import "MainViewController.h"
 #import <Parse/Parse.h>
+#import "ImageCellTableViewCell.h"
+#import "CommentsViewController.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
-//@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
-//@property (weak, nonatomic) IBOutlet UIButton *usernameButton;
-//@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-//@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-//@property (weak, nonatomic) IBOutlet UIButton *likeCountButton;
-//@property (weak, nonatomic) IBOutlet UITextView *commentsTextField;
-//@property (weak, nonatomic) IBOutlet UIButton *likeButton;
-//@property (weak, nonatomic) IBOutlet UIButton *commentButton;
+
+@property NSMutableArray *pictures;
+
 
 @end
 
@@ -26,17 +23,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.pictures = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"Audis4"], [UIImage imageNamed:@"Beach"], [UIImage imageNamed:@"Sand"], [UIImage imageNamed:@"TennisBall"], nil];
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainCell"];
+    ImageCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainCell"];
+    cell.pictureImageView.image = self.pictures[indexPath.row];
+    cell.thumbnailImage.image = self.pictures[indexPath.row];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainCell"];
+
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.pictures.count;
+}
+- (IBAction)commentButtonTapped:(UIButton *)sender
+{
+    [self performSegueWithIdentifier:@"comment" sender:self];
+}
+
+-(IBAction)unwindSegue:(UIStoryboardSegue *)segue
+{
+    CommentsViewController *commentsVC = segue.sourceViewController;
+    ImageCellTableViewCell *cell = [ImageCellTableViewCell new];
+    cell.commentsTextField.text = commentsVC.textView.text;
 }
 
 @end
