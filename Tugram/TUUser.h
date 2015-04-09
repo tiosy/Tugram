@@ -18,7 +18,6 @@
 @property (nonatomic, strong) NSString *fullName;
 @property (nonatomic, strong) PFFile *profileThumbnailPFFile;
 @property (nonatomic, strong) NSData *profileThumnailNSData; //redundant but might improve performance
-
 @property (nonatomic, strong) NSArray *followers; //contains NSString *uid
 @property (nonatomic, strong) NSArray *followings; //contains NSString *uid
 @property (nonatomic, strong) NSArray *likes; //contains NSString *pid

@@ -8,12 +8,15 @@
 
 #import <Parse/Parse.h>
 
-@interface TUTransaction : PFObject
+@interface TUTransaction : PFObject<PFSubclassing>
 
 @property NSString *xtranID;
 @property NSString *uid; //user ID
 @property NSString *pid; // picture ID
 @property NSString *type;
+
+
++ (NSString *)parseClassName;
 
 @end
 
