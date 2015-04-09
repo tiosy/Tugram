@@ -6,28 +6,26 @@
 //  Copyright (c) 2015 Timothy Yeh. All rights reserved.
 //
 
+
+//This Class is mainly used for UI...TUPFUser takes care of signup/login jobs
 #import <Parse/Parse.h>
-
-
-
 //subclass of PFObject
 @interface TUUser : PFObject<PFSubclassing>
 
 //PFUser has email, username, password
-@property (nonatomic,strong)  NSNumber *uid;
+@property (nonatomic,strong)  NSString *uid;
 @property (nonatomic, strong) NSString *username;
-@property (nonatomic, strong) NSString *password;
-@property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *fullName;
 @property (nonatomic, strong) PFFile *profileThumbnailPFFile;
+@property (nonatomic, strong) NSData *profileThumnailNSData; //redundant but might improve performance
 
-@property (nonatomic, strong) NSArray *followers;
-@property (nonatomic, strong) NSArray *followings;
-@property (nonatomic, strong) NSArray *likes;
+@property (nonatomic, strong) NSArray *followers; //contains NSString *uid
+@property (nonatomic, strong) NSArray *followings; //contains NSString *uid
+@property (nonatomic, strong) NSArray *likes; //contains NSString *pid
 
 + (NSString *)parseClassName;
 
-
+-(instancetype) initWith:(NSString *)username fullname:(NSString *) fullname userProfileImage: (UIImage *) userProfileImage;
 
 @end
 

@@ -28,6 +28,31 @@
     return @"TUPhoto";
 }
 
+-(void) AddPhoto:(UIImage *) image{
+
+    if(self)
+    {
+        self.username   =   username;
+        self.fullName   =   fullname;
+
+        //UIImage ->  to Thumbnail -> NSData -> PFFile
+        UIImage *imageThumbnail = [TYUtility imageWithImage:userProfileImage scaledToSize:CGSizeMake(30.0, 30.0)];
+        NSData *imageNSData = UIImagePNGRepresentation(imageThumbnail);
+        PFFile *imagePFFile = [PFFile fileWithName:self.objectId data:imageNSData]; //use uniqe objectId as
+        self.profileThumbnailPFFile = imagePFFile;
+        
+    }
+
+}
+
+
+
+
+
+
+
+
+
 @end
 
 

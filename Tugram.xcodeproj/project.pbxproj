@@ -15,6 +15,8 @@
 		331283EA1AD4B3FD00DFC9C2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */; };
 		33DC31461AD648FC00521403 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DC31451AD648FC00521403 /* CommentsViewController.m */; };
 		33DC31471AD6DFA400521403 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105BA1AD36F7600583B4B /* MainViewController.m */; };
+		6E0C999F1AD71F6400EDDE8C /* TUTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C999E1AD71F6400EDDE8C /* TUTransaction.m */; };
+		6E0C99A31AD725CB00EDDE8C /* TYUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C99A21AD725CB00EDDE8C /* TYUtility.m */; };
 		6E2105B21AD36F7600583B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B11AD36F7600583B4B /* main.m */; };
 		6E2105B51AD36F7600583B4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B41AD36F7600583B4B /* AppDelegate.m */; };
 		6E2105BE1AD36F7600583B4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2105BC1AD36F7600583B4B /* Main.storyboard */; };
@@ -38,6 +40,7 @@
 		6E21064B1AD505F000583B4B /* TUComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21064A1AD505F000583B4B /* TUComment.m */; };
 		6E21064E1AD5078D00583B4B /* TUPFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21064D1AD5078D00583B4B /* TUPFUser.m */; };
 		6E46EF2F1AD573CE00561B2B /* TUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E46EF2E1AD573CE00561B2B /* TUUser.m */; };
+		6EACEFFC1AD6E5F10005B26D /* tyTestingParseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EACEFFB1AD6E5F10005B26D /* tyTestingParseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,10 @@
 		331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		33DC31441AD648FC00521403 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
 		33DC31451AD648FC00521403 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		6E0C999D1AD71F6400EDDE8C /* TUTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUTransaction.h; path = ../TUTransaction.h; sourceTree = "<group>"; };
+		6E0C999E1AD71F6400EDDE8C /* TUTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUTransaction.m; path = ../TUTransaction.m; sourceTree = "<group>"; };
+		6E0C99A11AD725CB00EDDE8C /* TYUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYUtility.h; sourceTree = "<group>"; };
+		6E0C99A21AD725CB00EDDE8C /* TYUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYUtility.m; sourceTree = "<group>"; };
 		6E2105AC1AD36F7600583B4B /* Tugram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tugram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2105B01AD36F7600583B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E2105B11AD36F7600583B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +106,8 @@
 		6E21064D1AD5078D00583B4B /* TUPFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUPFUser.m; sourceTree = "<group>"; };
 		6E46EF2D1AD573CE00561B2B /* TUUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUUser.h; sourceTree = "<group>"; };
 		6E46EF2E1AD573CE00561B2B /* TUUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUUser.m; sourceTree = "<group>"; };
+		6EACEFFA1AD6E5F10005B26D /* tyTestingParseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tyTestingParseViewController.h; sourceTree = "<group>"; };
+		6EACEFFB1AD6E5F10005B26D /* tyTestingParseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tyTestingParseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E0C99A01AD7254E00EDDE8C /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				6E0C99A11AD725CB00EDDE8C /* TYUtility.h */,
+				6E0C99A21AD725CB00EDDE8C /* TYUtility.m */,
+			);
+			name = Utilites;
+			sourceTree = "<group>";
+		};
 		6E2105A31AD36F7600583B4B = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +172,7 @@
 		6E2105AE1AD36F7600583B4B /* Tugram */ = {
 			isa = PBXGroup;
 			children = (
+				6E0C99A01AD7254E00EDDE8C /* Utilites */,
 				6E2106451AD5057C00583B4B /* Model */,
 				6E2105B31AD36F7600583B4B /* AppDelegate.h */,
 				6E2105B41AD36F7600583B4B /* AppDelegate.m */,
@@ -174,6 +193,8 @@
 				331283E61AD4A98200DFC9C2 /* ProfileViewController.m */,
 				331283CD1AD487A600DFC9C2 /* ImageCellTableViewCell.h */,
 				331283CE1AD487A600DFC9C2 /* ImageCellTableViewCell.m */,
+				6EACEFFA1AD6E5F10005B26D /* tyTestingParseViewController.h */,
+				6EACEFFB1AD6E5F10005B26D /* tyTestingParseViewController.m */,
 				6E2105BF1AD36F7600583B4B /* Images.xcassets */,
 				6E2105C11AD36F7600583B4B /* LaunchScreen.xib */,
 				6E2105AF1AD36F7600583B4B /* Supporting Files */,
@@ -238,6 +259,8 @@
 				6E2106471AD505C300583B4B /* TUPhoto.m */,
 				6E2106491AD505F000583B4B /* TUComment.h */,
 				6E21064A1AD505F000583B4B /* TUComment.m */,
+				6E0C999D1AD71F6400EDDE8C /* TUTransaction.h */,
+				6E0C999E1AD71F6400EDDE8C /* TUTransaction.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -347,9 +370,12 @@
 				331283E11AD4A95E00DFC9C2 /* PictureViewController.m in Sources */,
 				331283E41AD4A96B00DFC9C2 /* LikesViewController.m in Sources */,
 				331283EA1AD4B3FD00DFC9C2 /* LoginViewController.m in Sources */,
+				6EACEFFC1AD6E5F10005B26D /* tyTestingParseViewController.m in Sources */,
 				6E21064E1AD5078D00583B4B /* TUPFUser.m in Sources */,
 				6E21064B1AD505F000583B4B /* TUComment.m in Sources */,
+				6E0C99A31AD725CB00EDDE8C /* TYUtility.m in Sources */,
 				6E2106481AD505C300583B4B /* TUPhoto.m in Sources */,
+				6E0C999F1AD71F6400EDDE8C /* TUTransaction.m in Sources */,
 				331283CF1AD487A600DFC9C2 /* ImageCellTableViewCell.m in Sources */,
 				6E2105B51AD36F7600583B4B /* AppDelegate.m in Sources */,
 				33DC31461AD648FC00521403 /* CommentsViewController.m in Sources */,

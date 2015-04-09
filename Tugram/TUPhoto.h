@@ -8,12 +8,10 @@
 
 #import <Parse/Parse.h>
 
-@class TUPFUser;
-
-
 @interface TUPhoto : PFObject<PFSubclassing>
 
 //PFUser has email, username, password
+@property (nonatomic, strong) NSString *pid; //use TUPhoto's objectId 
 @property (nonatomic, strong) PFFile *imagePFFile;
 @property (nonatomic, strong) NSData *thumbnailImageNSData;
 @property (nonatomic, strong) NSArray *comments;
@@ -21,5 +19,7 @@
 @property (nonatomic, strong) NSString *uploadedBy;
 
 + (NSString *)parseClassName;
+
+-(void) AddPhoto:(UIImage *) image;
 
 @end
