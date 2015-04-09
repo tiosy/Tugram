@@ -13,7 +13,7 @@
 //PFUser has email, username, password
 @property (nonatomic, strong) NSString *pid; //use TUPhoto's objectId 
 @property (nonatomic, strong) PFFile *imagePFFile;
-@property (nonatomic, strong) NSData *thumbnailImageNSData;
+@property (nonatomic, strong) NSData *imageThumbnailNSData;
 @property (nonatomic, strong) NSArray *comments;
 @property (nonatomic, strong) NSArray *likedBy;
 @property (nonatomic, strong) NSString *uploadedBy;

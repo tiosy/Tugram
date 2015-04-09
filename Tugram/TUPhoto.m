@@ -10,6 +10,7 @@
 // Import this header to let Armor know that PFObject privately provides most
 // of the methods for PFSubclassing.
 #import <Parse/PFObject+Subclass.h>
+#import "TYUtility.h"
 
 @implementation TUPhoto
 
@@ -28,22 +29,27 @@
     return @"TUPhoto";
 }
 
--(void) AddPhoto:(UIImage *) image{
+-(void) AddPhoto:(UIImage *) imageUIImage{
 
     if(self)
     {
-        self.username   =   username;
-        self.fullName   =   fullname;
+        self.pid = self.objectId; //NSString
 
+        //UIImage -> NSData -> PFFile
+        NSData *imageNSData = UIImagePNGRepresentation(imageUIImage);
+        PFFile *imagePFFile = [PFFile fileWithName:self.objectId data:imageNSData]; //use uniqe objectId as file name
+        self.imagePFFile = imagePFFile;
         //UIImage ->  to Thumbnail -> NSData -> PFFile
-        UIImage *imageThumbnail = [TYUtility imageWithImage:userProfileImage scaledToSize:CGSizeMake(30.0, 30.0)];
-        NSData *imageNSData = UIImagePNGRepresentation(imageThumbnail);
-        PFFile *imagePFFile = [PFFile fileWithName:self.objectId data:imageNSData]; //use uniqe objectId as
-        self.profileThumbnailPFFile = imagePFFile;
+        UIImage *imageThumbnail = [TYUtility imageWithImage:imageUIImage scaledToSize:CGSizeMake(60.0, 60.0)];
+        NSData *imageThumbnailNSData = UIImagePNGRepresentation(imageThumbnail);
+        self.imageThumbnailNSData = imageThumbnailNSData;
         
     }
 
 }
+
+
+
 
 
 
