@@ -7,10 +7,13 @@
 //
 
 #import "ProfileViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface ProfileViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
 
 @end
 
@@ -18,30 +21,156 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.tapGesture.delegate = self;
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)followersButton:(UIButton *)sender
+{
+
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)followingButton:(UIButton *)sender
+{
+
 }
-*/
-- (IBAction)followersButton:(UIButton *)sender {
+
+
+- (IBAction)editProfileButton:(UIButton *)sender
+{
+
 }
-- (IBAction)followingButton:(UIButton *)sender {
+
+
+- (IBAction)segmentedControl:(UISegmentedControl *)sender
+{
+
 }
-- (IBAction)editProfileButton:(UIButton *)sender {
+
+- (IBAction)tapGesture:(UITapGestureRecognizer *)sender
+{
+    [self showAlert];
 }
-- (IBAction)segmentedControl:(UISegmentedControl *)sender {
+
+
+#pragma MARK - EDIT PROFILE PICTURE
+
+
+-(void)showAlert
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Choose Image" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                              {
+                                  [self showCamera];
+                              }];
+
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"Choose From Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self showLibrary];
+    }];
+
+    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+        [self performSegueWithIdentifier:@"home" sender:self];
+    }];
+
+    [alertController addAction:action1];
+    [alertController addAction:action2];
+    [alertController addAction:action3];
+
+    [self presentViewController:alertController animated:YES completion:nil];
 }
+
+
+-(void)showCamera
+{
+
+    UIImagePickerController *imagePicker = [UIImagePickerController new];
+
+    if (UIImagePickerControllerSourceTypeCamera)
+    {
+        imagePicker.delegate = self;
+
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+
+        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage, (NSString *) kUTTypeMovie];
+
+        imagePicker.allowsEditing = NO;
+
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+}
+
+
+-(void)showLibrary
+{
+    UIImagePickerController *imagePicker = [UIImagePickerController new];
+
+    if (!UIImagePickerControllerSourceTypePhotoLibrary)
+    {
+        imagePicker.delegate = self;
+
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
+        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage, (NSString *) kUTTypeMovie];
+
+        imagePicker.allowsEditing = NO;
+
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+}
+
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSString *mediaType = info[UIImagePickerControllerMediaType];
+
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage])
+    {
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+
+        self.profilePicture.image = image;
+
+        [self.profilePicture setAutoresizingMask:(UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth)];
+//        if (self.newMedia)
+//            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:finishedSavingWithError:contextInfo:), nil);
+    }
+    else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
+    {
+        UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(mediaType);
+    }
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+    //    MainViewController *mainVC = [MainViewController new];
+
+    [self performSegueWithIdentifier:@"home" sender:self];
+
+    //    [self presentViewController:mainVC animated:YES completion:nil];
+
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+-(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (error) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Save failed"
+                              message: @"Failed to save image/video"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
 
 @end

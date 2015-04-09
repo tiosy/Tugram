@@ -7,12 +7,14 @@
 //
 
 #import "LoginViewController.h"
+#import "ImageCellTableViewCell.h"
 
-@interface LoginViewController ()
+@interface LoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
 
 @end
 
@@ -20,15 +22,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+//    if (there is a User) {
+//        [self performSegueWithIdentifier:@"login" sender:self];
+//
+//    }
+
+
+
 }
 
-- (IBAction)onSignUp:(UIButton *)sender {
+- (IBAction)onSignUp:(UIButton *)sender
+{
+
+    [self performSegueWithIdentifier:@"signup" sender:self];
+    
 }
 
 
 - (IBAction)onLogIn:(UIButton *)sender {
 }
+
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 /*
 #pragma mark - Navigation
