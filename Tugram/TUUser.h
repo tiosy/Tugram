@@ -27,6 +27,8 @@
 
 -(instancetype) initWith:(NSString *)username fullname:(NSString *) fullname userProfileImage: (UIImage *) userProfileImage;
 
+-(void) addFollowing: (NSString *) currentUID followingUID:(NSString *) uid;
+
 @end
 
 

@@ -15,8 +15,9 @@
 #import "TUComment.h"
 #import "TYUtility.h"
 
-@implementation TUPhoto
 
+@implementation TUPhoto
+@dynamic pid;
 @dynamic imagePFFile;
 @dynamic imageThumbnailNSData;
 @dynamic comments;

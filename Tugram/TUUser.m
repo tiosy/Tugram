@@ -13,11 +13,19 @@
 #import <Parse/PFObject+Subclass.h>
 #import "TYUtility.h"
 
+
+
+
+
+
+
 @implementation TUUser
 
+@dynamic uid;
 @dynamic username;
 @dynamic fullName;
 @dynamic profileThumbnailPFFile;
+@dynamic profileThumnailNSData;
 @dynamic followers;
 @dynamic followings;
 @dynamic likes;
@@ -47,12 +55,48 @@
         self.profileThumnailNSData = imageNSData;
         self.profileThumbnailPFFile = imagePFFile;
 
+        [self saveInBackground];
+
     }
 
     return self;
 }
 
 
+-(void) addFollowing: (NSString *) currentUID followingUID:(NSString *) uid{
+
+    if(self)
+    {
+        [self addUniqueObject:uid forKey:@"followings"];
+        [self saveInBackground];
+
+        //now write follower(aka currentUID) to uid
+        //retrieve the TUUser
+        PFQuery *query = [TUUser query];
+        [query whereKey:@"uid" equalTo:uid];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+
+                //retrieve the TUPhoto
+                TUUser *tuuser = [objects firstObject];
+                [tuuser addUniqueObject:currentUID forKey:@"followers"];
+                [tuuser saveInBackground];
+
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+
+
+    }
+
+
+
+
+
+}
 
 
 

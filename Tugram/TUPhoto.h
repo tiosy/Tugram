@@ -22,5 +22,5 @@
 
 -(void) AddPhoto:(UIImage *) imageUIImage uid: (NSString *) uid;
 -(void) likePhoto: (NSString *) uid;
--(void) commentPhoto: (NSString *) uid;
+-(void) commentPhoto: (NSString *) uid comment:(NSString *) comment;
 @end
