@@ -13,8 +13,8 @@
 
 @implementation TUPhoto
 
-@dynamic image;
-@dynamic thumbnailImage;
+@dynamic imagePFFile;
+@dynamic thumbnailImageNSData;
 @dynamic comments;
 @dynamic likedBy;
 @dynamic uploadedBy;

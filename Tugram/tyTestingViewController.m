@@ -40,17 +40,21 @@
 
 
 //  TESTING SUBCLASS PFUSER ...ADD to Parse: create User
-    [self testAddPFUser];
+//    [self testAddPFUser];
 
 //  ADD to Parse: create User
-    [self testAddTUUser];
+//    [self testAddTUUser];
+//
 
+    
 // update object/image to Parse
 [self testUpdateTUUserObjectImage];
 
 
 // Retrieve object/image from Parse
 [self testRetrieveTUUser];
+
+
 
 
 }
@@ -97,6 +101,30 @@
 
 }
 
+// add image to TUPhoto
+-(void) testAddImageTUPhoto
+{
+    //use PFUser currentuser
+     TUPFUser *user = [TUPFUser object];
+    //user.currentUser
+
+    TUPhoto *photo = [TUPhoto object];
+
+    photo.uploadedBy = user;
+
+
+    UIImage *image = [UIImage imageNamed:@"person"];
+    NSData *imageData = UIImagePNGRepresentation(image);
+
+    PFFile *imagePFFile = [PFFile fileWithName:@"person.png" data:imageData];
+    photo.imagePFFile = imagePFFile;
+
+
+    [photo saveInBackground];
+
+
+}
+
 // update object/image to Parse
 -(void) testUpdateTUUserObjectImage
 {
@@ -116,10 +144,9 @@
     
                     user.profileThumbnailPFFile = imageFile;
     
-    
                     [user saveInBackground];
-    
-    
+
+                    //add to TUPhoto
     
                 } else {
                     // Log details of the failure

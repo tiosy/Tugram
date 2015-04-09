@@ -14,11 +14,11 @@
 @interface TUPhoto : PFObject<PFSubclassing>
 
 //PFUser has email, username, password
-@property (nonatomic, strong) PFFile *image;
-@property (nonatomic, strong) NSData *thumbnailImage;
+@property (nonatomic, strong) PFFile *imagePFFile;
+@property (nonatomic, strong) NSData *thumbnailImageNSData;
 @property (nonatomic, strong) NSArray *comments;
 @property (nonatomic, strong) NSArray *likedBy;
-@property (nonatomic, strong) TUPFUser *uploadedBy;
+@property (nonatomic, strong) NSString *uploadedBy;
 
 + (NSString *)parseClassName;
 

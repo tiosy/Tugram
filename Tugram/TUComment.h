@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) TUPhoto *forPhoto;
-@property (nonatomic, strong) TUPFUser *byUser;
+@property (nonatomic, strong) NSString *byUser;
 
 + (NSString *)parseClassName;
 
