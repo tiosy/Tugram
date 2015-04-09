@@ -21,5 +21,5 @@
 + (NSString *)parseClassName;
 
 -(void) AddPhoto:(UIImage *) image;
-
+-(void) likePhoto:(NSString *) pid uid:(NSString *) uid;
 @end

@@ -44,7 +44,7 @@
         UIImage *imageThumbnail = [TYUtility imageWithImage:userProfileImage scaledToSize:CGSizeMake(30.0, 30.0)];
         NSData *imageNSData = UIImagePNGRepresentation(imageThumbnail);
         PFFile *imagePFFile = [PFFile fileWithName:self.objectId data:imageNSData]; //use uniqe objectId as filename
-        self.profileThumbnailNSData = imageNSData;
+        self.profileThumnailNSData = imageNSData;
         self.profileThumbnailPFFile = imagePFFile;
 
     }

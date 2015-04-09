@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSData *profileThumbnailImage;
 @property (nonatomic, strong) NSArray *followers;
 @property (nonatomic, strong) NSArray *followings;
-@property (nonatomic, strong) NSArray *likes;
+@property (nonatomic, strong) NSArray *likes;  //NSString *pid
 
 //+ (NSString *)parseClassName;
 
