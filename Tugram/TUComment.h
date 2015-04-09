@@ -13,9 +13,10 @@
 
 @interface TUComment : PFObject<PFSubclassing>
 
-@property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) TUPhoto *forPhoto;
-@property (nonatomic, strong) NSString *byUser;
+@property (nonatomic, strong) NSString *mid; //use self's objectId as comment id
+@property (nonatomic, strong) NSString *text; // comment
+@property (nonatomic, strong) NSString *pid; // photo id
+@property (nonatomic, strong) NSString *uid; // user id
 
 + (NSString *)parseClassName;
 

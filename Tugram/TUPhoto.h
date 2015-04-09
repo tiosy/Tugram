@@ -14,12 +14,13 @@
 @property (nonatomic, strong) NSString *pid; //use TUPhoto's objectId 
 @property (nonatomic, strong) PFFile *imagePFFile;
 @property (nonatomic, strong) NSData *imageThumbnailNSData;
-@property (nonatomic, strong) NSArray *comments;
-@property (nonatomic, strong) NSArray *likedBy;
-@property (nonatomic, strong) NSString *uploadedBy;
+@property (nonatomic, strong) NSArray *comments; // mids
+@property (nonatomic, strong) NSArray *likedBy; //uids
+@property (nonatomic, strong) NSString *uploadedBy; //uid
 
 + (NSString *)parseClassName;
 
--(void) AddPhoto:(UIImage *) image;
--(void) likePhoto:(NSString *) pid uid:(NSString *) uid;
+-(void) AddPhoto:(UIImage *) imageUIImage uid: (NSString *) uid;
+-(void) likePhoto: (NSString *) uid;
+-(void) commentPhoto: (NSString *) uid;
 @end

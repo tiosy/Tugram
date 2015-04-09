@@ -16,8 +16,9 @@
 
 
 @dynamic text;
-@dynamic forPhoto;
-@dynamic byUser;
+@dynamic pid;
+@dynamic uid;
+@dynamic mid;
 
 + (void)load {
     [self registerSubclass];

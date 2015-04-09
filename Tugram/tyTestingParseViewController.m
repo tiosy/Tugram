@@ -119,7 +119,7 @@
 
     TUPhoto *photo = [TUPhoto object];
 
-    photo.uploadedBy = user;
+    photo.uploadedBy = user.objectId;
 
 
     UIImage *image = [UIImage imageNamed:@"person"];

@@ -12,6 +12,7 @@
 #import <Parse/PFObject+Subclass.h>
 
 #import "TUUser.h"
+#import "TUComment.h"
 #import "TYUtility.h"
 
 @implementation TUPhoto
@@ -33,6 +34,7 @@
 
 -(void) AddPhoto:(UIImage *) imageUIImage uid: (NSString *) uid{
 
+
     if(self)
     {
         self.pid = self.objectId; //NSString
@@ -47,6 +49,8 @@
         self.imageThumbnailNSData = imageThumbnailNSData;
 
         self.uploadedBy = uid;
+
+        [self saveInBackground];
     }
 
 }
@@ -54,7 +58,7 @@
 
 -(void) likePhoto:(NSString *) uid{
 
-    //self is the Photo
+    //self is the TUPhoto
 
     [self addUniqueObject:uid forKey:@"likedBy"];
     [self saveInBackground];
@@ -78,6 +82,25 @@
     }];
 }
 
+
+-(void) commentPhoto: (NSString *) uid comment:(NSString *) comment{
+
+    //self is the TUPhoto
+
+    [self addUniqueObject:uid forKey:@"comments"];
+    [self saveInBackground];
+
+    //adding a comment to TUComment  //i know i know...just add here instead
+    TUComment *tucomment = [TUComment object];
+    tucomment.uid = uid;
+    tucomment.pid = self.pid;
+    tucomment.pid = self.objectId;
+    tucomment.text = comment;
+
+    [tucomment saveInBackground];
+
+
+}
 
 
 
