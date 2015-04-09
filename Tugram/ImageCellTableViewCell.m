@@ -8,6 +8,7 @@
 
 #import "ImageCellTableViewCell.h"
 #import "LoginViewController.h"
+#import "CommentsViewController.h"
 
 
 @implementation ImageCellTableViewCell
@@ -43,5 +44,6 @@
     }
 
 }
+
 
 @end

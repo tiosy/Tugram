@@ -46,11 +46,5 @@
     [self performSegueWithIdentifier:@"comment" sender:self];
 }
 
--(IBAction)unwindSegue:(UIStoryboardSegue *)segue
-{
-    CommentsViewController *commentsVC = segue.sourceViewController;
-    ImageCellTableViewCell *cell = [ImageCellTableViewCell new];
-    cell.commentsTextField.text = commentsVC.textView.text;
-}
 
 @end

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CommentsViewController : UIViewController <UITextViewDelegate>
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@interface CommentsViewController : UIViewController
 
 @end

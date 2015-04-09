@@ -8,8 +8,10 @@
 
 #import "CommentsViewController.h"
 
-@interface CommentsViewController ()
+@interface CommentsViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableArray *comments;
 @end
 
 @implementation CommentsViewController
@@ -17,12 +19,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    self.comments = [NSMutableArray new];
 }
 
--(BOOL)textViewShouldEndEditing:(UITextView *)textView
+
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [textView resignFirstResponder];
-    return YES;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
+    cell.textLabel.text = self.comments[indexPath.row];
+    return cell;
 }
 
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.comments.count;
+}
+
+
+- (IBAction)dismissButton:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (IBAction)addButton:(UIButton *)sender
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Add Comment" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Enter Comment Here";
+    }];
+
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+        UITextField *textField = alertController.textFields.firstObject;
+        NSString *string = [NSString new];
+        string = textField.text;
+        [self.comments addObject:string];
+        NSLog(@"%ld", (unsigned long)self.comments.count);
+        [self.tableView reloadData];
+
+    }];
+
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:^{
+        nil;
+    }];
+}
 @end
