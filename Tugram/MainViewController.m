@@ -33,7 +33,7 @@
     [TUPhoto retrieveTUPhotoWithCompletion:^(NSArray *array) {
 
         self.pictures = [array mutableCopy];
-        NSLog(@"%@ %ld", self.pictures, self.pictures.count);
+        NSLog(@"%@ %ld", self.pictures, (unsigned long)self.pictures.count);
 
         [self.tableView reloadData];
         
@@ -100,7 +100,7 @@
     NSTimeInterval distanceBetweenDates = [now timeIntervalSinceDate:date2];
     double secondsInAnHour = 3600;
     NSInteger hoursBetweenDates = distanceBetweenDates / secondsInAnHour;
-    cell.timeLabel.text = [NSString stringWithFormat:@"%ldh",hoursBetweenDates];
+    cell.timeLabel.text = [NSString stringWithFormat:@"%ldh",(long)hoursBetweenDates];
 
 
 

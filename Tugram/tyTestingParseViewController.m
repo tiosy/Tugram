@@ -277,13 +277,13 @@
                             [self.dic  setObject:img forKey:@"picture"];
                             [self.dic  setObject:tuphoto.uploadedBy forKey:@"username"];
                             [self.dic  setObject:tuphoto.createdAt forKey:@"time"];
-                            NSString  *numlikes = [NSString stringWithFormat:@"%ld", tuphoto.likedBy.count];
+                            NSString  *numlikes = [NSString stringWithFormat:@"%ld", (unsigned long)tuphoto.likedBy.count];
                             [self.dic  setObject:numlikes forKey:@"numLikes"];
                             [self.dic setObject:tuphoto.comments forKey:@"comments"];
 
                             [self.pictures addObject:self.dic];
 
-                            NSLog(@"===%ld",self.pictures.count);
+                            NSLog(@"===%ld",(unsigned long)self.pictures.count);
                         }
                     
                     
