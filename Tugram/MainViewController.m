@@ -13,9 +13,11 @@
 #import "LoginViewController.h"
 #import "TUPFUser.h"
 
-@interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 
 @property NSMutableArray *pictures;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *likersTapGesture;
 
 
 @end
@@ -24,6 +26,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.tapGesture = [UITapGestureRecognizer new];
+    self.tapGesture.delegate = self;
+    self.tapGesture.enabled = YES;
+
+    self.likersTapGesture = [UITapGestureRecognizer new];
+    self.likersTapGesture.delegate = self;
+    self.likersTapGesture.enabled = YES;
 
 
     LoginViewController *loginVC = [LoginViewController new];
@@ -56,5 +66,13 @@
     [self performSegueWithIdentifier:@"comment" sender:self];
 }
 
+- (IBAction)tapGestureOnTapped:(UITapGestureRecognizer *)sender
+{
+    [self performSegueWithIdentifier:@"likers" sender:self];
+}
+- (IBAction)likeCountTapGesture:(UITapGestureRecognizer *)sender
+{
+    [self performSegueWithIdentifier:@"profile" sender:self];
+}
 
 @end

@@ -18,6 +18,8 @@
 
     int x = 0;
 
+    self.likeCountLabel.userInteractionEnabled = YES;
+    self.userNameLabel.userInteractionEnabled = YES;
     self.likeCountLabel.text = [NSString stringWithFormat:@"%d", x];
 
 }

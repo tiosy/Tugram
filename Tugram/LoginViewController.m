@@ -10,6 +10,7 @@
 #import "ImageCellTableViewCell.h"
 #import "MainViewController.h"
 #import "TUPFUser.h"
+#import "TUUser.h"
 
 @interface LoginViewController () <UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -24,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 
 //    TUPFUser *user = [TUPFUser currentUser];
 
@@ -55,6 +57,7 @@
         if (!error)
         {
             [user signUp];
+//            TUUser *tuUser = [TUUser object];
             [self performSegueWithIdentifier:@"mainfeed" sender:self];
 
 
