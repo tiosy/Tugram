@@ -36,10 +36,10 @@
 
 
     TUPFUser *currentUser = [TUPFUser currentUser];
-    TUUser *user = [[TUUser alloc]initWith:currentUser.username fullname:currentUser.fullName userProfileImage:self.profilePicture.image];
+    //TUUser *user = [[TUUser alloc]initWith:currentUser.username fullname:currentUser.fullName userProfileImage:self.profilePicture.image];
 
-    self.nameLabel.text = user.fullName;
-    self.title = user.username;
+    self.nameLabel.text = currentUser.fullName;
+    self.title = currentUser.username;
 
 }
 

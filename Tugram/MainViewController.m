@@ -12,6 +12,7 @@
 #import "CommentsViewController.h"
 #import "LoginViewController.h"
 #import "TUPFUser.h"
+#import "TUPhoto.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 
@@ -19,10 +20,26 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *likersTapGesture;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation MainViewController
+
+-(void)viewDidAppear:(BOOL)animated{
+
+    //TY
+    self.pictures = [NSMutableArray new];
+    [TUPhoto retrieveTUPhotoWithCompletion:^(NSArray *array) {
+
+        self.pictures = [array mutableCopy];
+        NSLog(@"%@ %ld", self.pictures, self.pictures.count);
+
+        [self.tableView reloadData];
+        
+    }];
+    //TY
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,15 +64,44 @@
     NSLog(@"%@", currentUser);
 
     //THIS IS WHERE WE NEED OUR PICTURES
-    self.pictures = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"Audis4"], [UIImage imageNamed:@"Beach"], [UIImage imageNamed:@"Sand"], [UIImage imageNamed:@"TennisBall"], nil];
+
+    
+    //self.pictures = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"Audis4"], [UIImage imageNamed:@"Beach"], [UIImage imageNamed:@"Sand"], [UIImage imageNamed:@"TennisBall"], nil];
 
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ImageCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainCell"];
-    cell.pictureImageView.image = self.pictures[indexPath.row];
-    cell.thumbnailImage.image = self.pictures[indexPath.row];
+
+    TUPhoto *p = self.pictures[indexPath.row];
+    cell.userNameLabel.text = p.uploadedBy;
+    cell.thumbnailImage.image = [UIImage imageWithData:p.imageThumbnailNSData];
+
+    //retrieving image from Parse
+    PFFile *imagePFile = p.imagePFFile;
+    [imagePFile getDataInBackgroundWithBlock:^(NSData *imageNSData, NSError *error) {
+        if (!error) {
+            UIImage *img = [UIImage imageWithData:imageNSData];
+            cell.pictureImageView.image= img;
+        }
+    }];
+
+
+
+    //time
+    NSDate *now = [NSDate date];
+    //createdAt:"2011-06-10T18:33:42Z"
+    NSDate *date2 = p.createdAt;
+    NSTimeInterval distanceBetweenDates = [now timeIntervalSinceDate:date2];
+    double secondsInAnHour = 3600;
+    NSInteger hoursBetweenDates = distanceBetweenDates / secondsInAnHour;
+    cell.timeLabel.text = [NSString stringWithFormat:@"%ldh",hoursBetweenDates];
+
+
+
+//    cell.pictureImageView.image = self.pictures[indexPath.row];
+//    cell.thumbnailImage.image = self.pictures[indexPath.row];
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainCell"];
 
     return cell;

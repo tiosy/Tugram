@@ -20,7 +20,7 @@
 
 
 
-@interface tyTestingParseViewController () 
+@interface tyTestingParseViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *labelFullName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
@@ -66,7 +66,7 @@
 //    [TUPhoto addPhoto:img username:@"mary"];
 //    
 
-    [self retrieveTUPhoto];
+
 
 
 
@@ -99,11 +99,19 @@
 //    // Retrieve object/image from Parse
 //    [self testRetrieveTUUser];
 
+    //[self retrieveTUPhoto];
+
+    
+
+
+
 
 
 
 
 }
+
+
 
 
 
@@ -202,6 +210,13 @@
     }];
 }
 
+
+// 1) when load vc, download all photo objects
+// 2) load table
+// 3) in cell for row at index path, get image
+
+
+
 //  retrieve object & image from Parse
 -(void) testRetrieveTUUser{
 
@@ -245,79 +260,44 @@
     PFQuery *query = [TUPhoto query];
     //[query whereKey:@"username" equalTo:username];
     [query orderByDescending:@"createdAt"];
-    NSArray *objects = [query findObjects];
-    for (TUPhoto *tuphoto in objects) {
-        
-        //retrieving image from Parse
-        PFFile *imagePFile = tuphoto.imagePFFile;
-        [imagePFile getDataInBackgroundWithBlock:^(NSData *imageNSData, NSError *error) {
-                if (!error) {
-                    UIImage *img = [UIImage imageWithData:imageNSData];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
 
-                    self.dic = [NSMutableDictionary new];
+            for (TUPhoto *tuphoto in objects) {
 
-                    [self.dic  setObject:img forKey:@"picture"];
-                    [self.dic  setObject:tuphoto.uploadedBy forKey:@"username"];
-                    [self.dic  setObject:tuphoto.createdAt forKey:@"time"];
-                    NSString  *numlikes = [NSString stringWithFormat:@"%ld", tuphoto.likedBy.count];
-                    [self.dic  setObject:numlikes forKey:@"numLikes"];
-                    [self.dic setObject:tuphoto.comments forKey:@"comments"];
+                //retrieving image from Parse
+                PFFile *imagePFile = tuphoto.imagePFFile;
+                [imagePFile getDataInBackgroundWithBlock:^(NSData *imageNSData, NSError *error) {
+                        if (!error) {
+                            UIImage *img = [UIImage imageWithData:imageNSData];
 
-                    [self.pictures addObject:self.dic];
+                            self.dic = [NSMutableDictionary new];
 
-                    NSLog(@"===%ld",self.pictures.count);
-                }
-            
-            
-        }];
+                            [self.dic  setObject:img forKey:@"picture"];
+                            [self.dic  setObject:tuphoto.uploadedBy forKey:@"username"];
+                            [self.dic  setObject:tuphoto.createdAt forKey:@"time"];
+                            NSString  *numlikes = [NSString stringWithFormat:@"%ld", tuphoto.likedBy.count];
+                            [self.dic  setObject:numlikes forKey:@"numLikes"];
+                            [self.dic setObject:tuphoto.comments forKey:@"comments"];
 
-        
-    }
+                            [self.pictures addObject:self.dic];
 
-
+                            NSLog(@"===%ld",self.pictures.count);
+                        }
+                    
+                    
+                }];
 
 
+            }
 
 
-
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            // The find succeeded.
-//
-//            for (TUPhoto *tuphoto in objects) {
-//
-//                //retrieving image from Parse
-//                PFFile *imagePFile = tuphoto.imagePFFile;
-//                [imagePFile getDataInBackgroundWithBlock:^(NSData *imageNSData, NSError *error) {
-//                        if (!error) {
-//                            UIImage *img = [UIImage imageWithData:imageNSData];
-//
-//                            self.dic = [NSMutableDictionary new];
-//
-//                            [self.dic  setObject:img forKey:@"picture"];
-//                            [self.dic  setObject:tuphoto.uploadedBy forKey:@"username"];
-//                            [self.dic  setObject:tuphoto.createdAt forKey:@"time"];
-//                            NSString  *numlikes = [NSString stringWithFormat:@"%ld", tuphoto.likedBy.count];
-//                            [self.dic  setObject:numlikes forKey:@"numLikes"];
-//                            [self.dic setObject:tuphoto.comments forKey:@"comments"];
-//
-//                            [self.pictures addObject:self.dic];
-//
-//                            NSLog(@"===%ld",self.pictures.count);
-//                        }
-//                    
-//                    
-//                }];
-//
-//
-//            }
-//
-//
-//        } else {
-//            // Log details of the failure
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 
 
 

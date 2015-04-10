@@ -23,4 +23,7 @@
 +(void) addPhoto:(UIImage *) imageUIImage username: (NSString *) username;
 -(void) likePhoto: (NSString *) username;
 -(void) commentPhoto: (NSString *) uid comment:(NSString *) comment;
+
++ (void)retrieveTUPhotoWithCompletion:(void (^)(NSArray *))complete;
+
 @end
