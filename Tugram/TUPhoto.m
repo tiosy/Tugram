@@ -120,19 +120,83 @@
 
 
 
++ (void)retrieveTUPhotoWithCompletion:(void (^)(NSArray *))complete
+{
+    PFQuery *query = [TUPhoto query];
+    //[query whereKey:@"username" equalTo:username];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
 
 
+            NSMutableArray *superPictures = [NSMutableArray arrayWithCapacity:objects.count];
+            superPictures = [objects mutableCopy];
+            complete(superPictures);
 
-
-
-
-
-
-
-
-
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
 
 @end
+
+
+
+
+
+//for (TUPhoto *tuphoto in objects) {
+//    NSMutableDictionary *dic = [NSMutableDictionary new];
+//    [dic  setObject:tuphoto.pid forKey:@"pid"];
+//    [dic  setObject:tuphoto.imagePFFile forKey:@"imagePFfile"];
+//    [dic  setObject:tuphoto.imageThumbnailNSData   forKey:@"imageThumbnailNSData"];
+//    [dic  setObject:tuphoto.comments forKey:@"comments"];
+//    [dic  setObject:tuphoto.likedBy forKey:@"likedBy"];
+//    NSString  *numlikes = [NSString stringWithFormat:@"%ld", tuphoto.likedBy.count];
+//    [dic  setObject:numlikes forKey:@"numLikes"];
+//    [dic  setObject:tuphoto.uploadedBy forKey:@"uploadedBy"];
+//    [dic  setObject:tuphoto.createdAt forKey:@"createdAt"];
+//
+//
+//    [superPictures addObject:dic];
+//}
+
+//NSMutableArray *pictures = [NSMutableArray new];
+//for (TUPhoto *tuphoto in objects) {
+//
+//    //retrieving image from Parse
+//    PFFile *imagePFile = tuphoto.imagePFFile;
+//    [imagePFile getDataInBackgroundWithBlock:^(NSData *imageNSData, NSError *error) {
+//        if (!error) {
+//            UIImage *img = [UIImage imageWithData:imageNSData];
+//
+//            NSMutableDictionary *dic = [NSMutableDictionary new];
+//
+//            [dic  setObject:img forKey:@"picture"];
+//            [dic  setObject:tuphoto.uploadedBy forKey:@"username"];
+//            [dic  setObject:tuphoto.createdAt forKey:@"time"];
+//            NSString  *numlikes = [NSString stringWithFormat:@"%ld", tuphoto.likedBy.count];
+//            [dic  setObject:numlikes forKey:@"numLikes"];
+//            [dic setObject:tuphoto.comments forKey:@"comments"];
+//
+//            [pictures addObject:dic];
+//
+//            NSLog(@"===%ld",pictures.count);
+//        }
+//    }];
+//}
+//
+//complete(pictures);
+//
+
+
+
+
+
+
+
 
 
 
