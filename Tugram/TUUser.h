@@ -26,18 +26,14 @@
 
 -(instancetype) initWith:(NSString *)username fullname:(NSString *) fullname userProfileImage: (UIImage *) userProfileImage;
 
+//add a user
+-(void) addUser: (NSString *)username fullname:(NSString *) fullname;
+
+//add user profile image
+-(void) addUserProfileImage:(NSString *) username userProfileImage: (UIImage *) userProfileImage;
+
 -(void) addFollowing: (NSString *) currentUID followingUID:(NSString *) uid;
 
 @end
 
 
-
-//Counters
-//
-//The above example contains a common use case. The "score" field is a counter that we'll need to continually update with the player's latest score. Using the above method works but it's cumbersome and can lead to problems if you have multiple clients trying to update the same counter.
-//
-//To help with storing counter-type data, Parse provides methods that atomically increment (or decrement) any number field. So, the same update can be rewritten as:
-//
-//[gameScore incrementKey:@"score"];
-//[gameScore saveInBackground];
-//

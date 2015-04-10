@@ -116,26 +116,6 @@
 @end
 
 
-//save image to Parse
-
-//NSData *imageData = UIImagePNGRepresentation(image);
-//PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-//
-//PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
-//userPhoto[@"imageName"] = @"My trip to Hawaii!";
-//userPhoto[@"imageFile"] = imageFile;
-//[userPhoto saveInBackground];
-
-
-
-
-//retrieve image from Parse
-//PFFile *userImageFile = anotherPhoto[@"imageFile"];
-//[userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-//    if (!error) {
-//        UIImage *image = [UIImage imageWithData:imageData];
-//    }
-//}];
 
 
 

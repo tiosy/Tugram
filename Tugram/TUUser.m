@@ -39,7 +39,7 @@
 }
 
 //init a user for UI
--(instancetype) initWith:(NSString *)username fullname:(NSString *) fullname userProfileImage: (UIImage *) userProfileImage{
+-(instancetype) initWith:(NSString *)username fullname:(NSString *) fullname{
 
     self =[super init];
 
@@ -48,19 +48,65 @@
         self.username   =   username;
         self.fullName   =   fullname;
 
-        //UIImage ->  to Thumbnail -> NSData -> PFFile
-        UIImage *imageThumbnail = [TYUtility imageWithImage:userProfileImage scaledToSize:CGSizeMake(30.0, 30.0)];
-        NSData *imageNSData = UIImagePNGRepresentation(imageThumbnail);
-        PFFile *imagePFFile = [PFFile fileWithName:self.objectId data:imageNSData]; //use uniqe objectId as filename
-        self.profileThumnailNSData = imageNSData;
-        self.profileThumbnailPFFile = imagePFFile;
-
         [self saveInBackground];
 
     }
 
     return self;
 }
+
+
+//add a user
+
+
+//init a user for UI
+-(void) addUser:(TUUser *) user  username:(NSString *)username fullname:(NSString *) fullname{
+
+    //TUUser *user = [TUUser object];
+    user.uid = user.objectId;
+    user.username   =   username;
+    user.fullName   =   fullname;
+
+    [user saveInBackground];
+
+}
+
+
+
+
+
+//add user profile image
+-(void) addUserProfileImage:(NSString *) username userProfileImage: (UIImage *) userProfileImage {
+
+    //retrieve the TUUser first
+    PFQuery *query = [TUUser query];
+    [query whereKey:@"username" equalTo:username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+
+            //retrieve the TUUser
+            TUUser *tuuser = [objects firstObject];
+
+            //UIImage ->  to Thumbnail -> NSData -> PFFile
+            UIImage *imageThumbnail = [TYUtility imageWithImage:userProfileImage scaledToSize:CGSizeMake(30.0, 30.0)];
+            NSData *imageNSData = UIImagePNGRepresentation(imageThumbnail);
+            tuuser.profileThumnailNSData = imageNSData;
+
+            [tuuser saveInBackground];
+
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+}
+
+
+
+
+
 
 
 -(void) addFollowing: (NSString *) currentUID followingUID:(NSString *) uid{

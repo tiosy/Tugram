@@ -22,6 +22,11 @@
 
 @end
 
+
+
+
+// NOTES:
+
 //[TUPFUser registerSubclass];
 //[TUPFUser currentUser]; //return subclass
 
