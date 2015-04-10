@@ -15,6 +15,11 @@
 		331283EA1AD4B3FD00DFC9C2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */; };
 		33DC31461AD648FC00521403 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DC31451AD648FC00521403 /* CommentsViewController.m */; };
 		33DC31471AD6DFA400521403 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105BA1AD36F7600583B4B /* MainViewController.m */; };
+		33DC314D1AD7666D00521403 /* LikersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DC314C1AD7666D00521403 /* LikersViewController.m */; };
+		33DC31501AD76ABC00521403 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DC314F1AD76ABC00521403 /* UserProfileViewController.m */; };
+		33DC31531AD7813C00521403 /* FollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DC31521AD7813C00521403 /* FollowersViewController.m */; };
+		33DC31561AD781F600521403 /* FollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DC31551AD781F600521403 /* FollowingViewController.m */; };
+		33DC31591AD7888A00521403 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DC31581AD7888A00521403 /* ImageViewController.m */; };
 		6E0C999F1AD71F6400EDDE8C /* TUTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C999E1AD71F6400EDDE8C /* TUTransaction.m */; };
 		6E0C99A31AD725CB00EDDE8C /* TYUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C99A21AD725CB00EDDE8C /* TYUtility.m */; };
 		6E2105B21AD36F7600583B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2105B11AD36F7600583B4B /* main.m */; };
@@ -68,6 +73,16 @@
 		331283E91AD4B3FD00DFC9C2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		33DC31441AD648FC00521403 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
 		33DC31451AD648FC00521403 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		33DC314B1AD7666D00521403 /* LikersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikersViewController.h; sourceTree = "<group>"; };
+		33DC314C1AD7666D00521403 /* LikersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikersViewController.m; sourceTree = "<group>"; };
+		33DC314E1AD76ABC00521403 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		33DC314F1AD76ABC00521403 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		33DC31511AD7813C00521403 /* FollowersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowersViewController.h; sourceTree = "<group>"; };
+		33DC31521AD7813C00521403 /* FollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowersViewController.m; sourceTree = "<group>"; };
+		33DC31541AD781F600521403 /* FollowingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingViewController.h; sourceTree = "<group>"; };
+		33DC31551AD781F600521403 /* FollowingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingViewController.m; sourceTree = "<group>"; };
+		33DC31571AD7888A00521403 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		33DC31581AD7888A00521403 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		6E0C999D1AD71F6400EDDE8C /* TUTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUTransaction.h; path = ../TUTransaction.h; sourceTree = "<group>"; };
 		6E0C999E1AD71F6400EDDE8C /* TUTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUTransaction.m; path = ../TUTransaction.m; sourceTree = "<group>"; };
 		6E0C99A11AD725CB00EDDE8C /* TYUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYUtility.h; sourceTree = "<group>"; };
@@ -183,12 +198,22 @@
 				6E2105BA1AD36F7600583B4B /* MainViewController.m */,
 				33DC31441AD648FC00521403 /* CommentsViewController.h */,
 				33DC31451AD648FC00521403 /* CommentsViewController.m */,
+				33DC314B1AD7666D00521403 /* LikersViewController.h */,
+				33DC314C1AD7666D00521403 /* LikersViewController.m */,
 				331283DC1AD4A94D00DFC9C2 /* SearchViewController.h */,
 				331283DD1AD4A94D00DFC9C2 /* SearchViewController.m */,
 				331283DF1AD4A95E00DFC9C2 /* PictureViewController.h */,
 				331283E01AD4A95E00DFC9C2 /* PictureViewController.m */,
 				331283E21AD4A96B00DFC9C2 /* LikesViewController.h */,
 				331283E31AD4A96B00DFC9C2 /* LikesViewController.m */,
+				33DC31571AD7888A00521403 /* ImageViewController.h */,
+				33DC31581AD7888A00521403 /* ImageViewController.m */,
+				33DC314E1AD76ABC00521403 /* UserProfileViewController.h */,
+				33DC314F1AD76ABC00521403 /* UserProfileViewController.m */,
+				33DC31511AD7813C00521403 /* FollowersViewController.h */,
+				33DC31521AD7813C00521403 /* FollowersViewController.m */,
+				33DC31541AD781F600521403 /* FollowingViewController.h */,
+				33DC31551AD781F600521403 /* FollowingViewController.m */,
 				331283E51AD4A98200DFC9C2 /* ProfileViewController.h */,
 				331283E61AD4A98200DFC9C2 /* ProfileViewController.m */,
 				331283CD1AD487A600DFC9C2 /* ImageCellTableViewCell.h */,
@@ -365,14 +390,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33DC31531AD7813C00521403 /* FollowersViewController.m in Sources */,
+				33DC31561AD781F600521403 /* FollowingViewController.m in Sources */,
 				331283DE1AD4A94D00DFC9C2 /* SearchViewController.m in Sources */,
 				331283E71AD4A98200DFC9C2 /* ProfileViewController.m in Sources */,
+				33DC31591AD7888A00521403 /* ImageViewController.m in Sources */,
 				331283E11AD4A95E00DFC9C2 /* PictureViewController.m in Sources */,
 				331283E41AD4A96B00DFC9C2 /* LikesViewController.m in Sources */,
 				331283EA1AD4B3FD00DFC9C2 /* LoginViewController.m in Sources */,
 				6EACEFFC1AD6E5F10005B26D /* tyTestingParseViewController.m in Sources */,
 				6E21064E1AD5078D00583B4B /* TUPFUser.m in Sources */,
 				6E21064B1AD505F000583B4B /* TUComment.m in Sources */,
+				33DC31501AD76ABC00521403 /* UserProfileViewController.m in Sources */,
 				6E0C99A31AD725CB00EDDE8C /* TYUtility.m in Sources */,
 				6E2106481AD505C300583B4B /* TUPhoto.m in Sources */,
 				6E0C999F1AD71F6400EDDE8C /* TUTransaction.m in Sources */,
@@ -381,6 +410,7 @@
 				33DC31461AD648FC00521403 /* CommentsViewController.m in Sources */,
 				33DC31471AD6DFA400521403 /* MainViewController.m in Sources */,
 				6E2105B21AD36F7600583B4B /* main.m in Sources */,
+				33DC314D1AD7666D00521403 /* LikersViewController.m in Sources */,
 				6E46EF2F1AD573CE00561B2B /* TUUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,12 +8,16 @@
 
 #import "ProfileViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "TUPFUser.h"
+#import "TUUser.h"
 
-@interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate>
+
+@interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -22,10 +26,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+    self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+
     self.tapGesture = [UITapGestureRecognizer new];
     self.tapGesture.delegate = self;
     self.tapGesture.enabled = YES;
     [self.profilePicture setUserInteractionEnabled:YES];
+
+
+    TUPFUser *currentUser = [TUPFUser currentUser];
+    TUUser *user = [[TUUser alloc]initWith:currentUser.username fullname:currentUser.fullName userProfileImage:self.profilePicture.image];
+
+    self.nameLabel.text = user.fullName;
+    self.title = user.username;
 
 }
 
@@ -53,6 +67,20 @@
 }
 
 
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
+    //implement a users uploaded photos to display photos
+    return cell;
+
+}
+
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    //implement uploaded photos.count
+    return 1;
+}
 
 
 #pragma MARK - EDIT PROFILE PICTURE
@@ -73,7 +101,6 @@
 
     UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         [alertController dismissViewControllerAnimated:YES completion:nil];
-        [self performSegueWithIdentifier:@"home" sender:self];
     }];
 
     [alertController addAction:action1];
@@ -92,13 +119,9 @@
     if (UIImagePickerControllerSourceTypeCamera)
     {
         imagePicker.delegate = self;
-
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-
         imagePicker.mediaTypes = @[(NSString *) kUTTypeImage, (NSString *) kUTTypeMovie];
-
         imagePicker.allowsEditing = NO;
-
         [self presentViewController:imagePicker animated:YES completion:nil];
     }
 }
@@ -111,13 +134,9 @@
     if (!UIImagePickerControllerSourceTypePhotoLibrary)
     {
         imagePicker.delegate = self;
-
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-
         imagePicker.mediaTypes = @[(NSString *) kUTTypeImage, (NSString *) kUTTypeMovie];
-
         imagePicker.allowsEditing = NO;
-
         [self presentViewController:imagePicker animated:YES completion:nil];
     }
 }
@@ -130,6 +149,9 @@
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage])
     {
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+
+//        NSData *imageNSData = [self.selectedLost valueForKey:@"photo"];
+//        self.imageview.image = [UIImage imageWithData:imageNSData];
 
         self.profilePicture.image = image;
 

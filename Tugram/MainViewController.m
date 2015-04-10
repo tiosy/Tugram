@@ -13,9 +13,11 @@
 #import "LoginViewController.h"
 #import "TUPFUser.h"
 
-@interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 
 @property NSMutableArray *pictures;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *likersTapGesture;
 
 
 @end
@@ -25,6 +27,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+    self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+
+    self.tapGesture = [UITapGestureRecognizer new];
+    self.tapGesture.delegate = self;
+    self.tapGesture.enabled = YES;
+
+    self.likersTapGesture = [UITapGestureRecognizer new];
+    self.likersTapGesture.delegate = self;
+    self.likersTapGesture.enabled = YES;
+
 
     LoginViewController *loginVC = [LoginViewController new];
     TUPFUser *currentUser = [TUPFUser currentUser];
@@ -33,6 +46,7 @@
     }
     NSLog(@"%@", currentUser);
 
+    //THIS IS WHERE WE NEED OUR PICTURES
     self.pictures = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"Audis4"], [UIImage imageNamed:@"Beach"], [UIImage imageNamed:@"Sand"], [UIImage imageNamed:@"TennisBall"], nil];
 
 }
@@ -56,5 +70,13 @@
     [self performSegueWithIdentifier:@"comment" sender:self];
 }
 
+- (IBAction)tapGestureOnTapped:(UITapGestureRecognizer *)sender
+{
+    [self performSegueWithIdentifier:@"likers" sender:self];
+}
+- (IBAction)likeCountTapGesture:(UITapGestureRecognizer *)sender
+{
+    [self performSegueWithIdentifier:@"profile" sender:self];
+}
 
 @end
