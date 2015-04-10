@@ -13,6 +13,7 @@
 
 #import "TUUser.h"
 #import "TUComment.h"
+#import "TUTransaction.h"
 #import "TYUtility.h"
 
 
@@ -33,40 +34,45 @@
     return @"TUPhoto";
 }
 
--(void) addPhoto:(UIImage *) imageUIImage uid: (NSString *) uid{
++(void) addPhoto:(UIImage *) imageUIImage username: (NSString *) username{
 
 
-    if(self)
-    {
-        self.pid = self.objectId; //NSString
+    TUPhoto *tuphoto = [TUPhoto object];
+    tuphoto.pid = tuphoto.objectId; //NSString
 
-        //UIImage -> NSData -> PFFile
-        NSData *imageNSData = UIImagePNGRepresentation(imageUIImage);
-        PFFile *imagePFFile = [PFFile fileWithName:self.objectId data:imageNSData]; //use uniqe objectId as file name
-        self.imagePFFile = imagePFFile;
-        //UIImage ->  to Thumbnail -> NSData -> PFFile
-        UIImage *imageThumbnail = [TYUtility imageWithImage:imageUIImage scaledToSize:CGSizeMake(60.0, 60.0)];
-        NSData *imageThumbnailNSData = UIImagePNGRepresentation(imageThumbnail);
-        self.imageThumbnailNSData = imageThumbnailNSData;
+    //UIImage -> NSData -> PFFile
+    NSData *imageNSData = UIImagePNGRepresentation(imageUIImage);
+    PFFile *imagePFFile = [PFFile fileWithName:tuphoto.objectId data:imageNSData]; //use uniqe objectId as file name
+    tuphoto.imagePFFile = imagePFFile;
+    //UIImage ->  to Thumbnail -> NSData -> PFFile
+    UIImage *imageThumbnail = [TYUtility imageWithImage:imageUIImage scaledToSize:CGSizeMake(60.0, 60.0)];
+    NSData *imageThumbnailNSData = UIImagePNGRepresentation(imageThumbnail);
+    tuphoto.imageThumbnailNSData = imageThumbnailNSData;
 
-        self.uploadedBy = uid;
+    tuphoto.uploadedBy = username;
 
-        [self saveInBackground];
-    }
+    [tuphoto saveInBackground];
+
+
+    //add transaction
+    [TUTransaction addTransaction:username pid:tuphoto.pid type:@"addPhoto"];
+
+
+
 
 }
 
-
--(void) likePhoto:(NSString *) uid{
+// ???
+-(void) likePhoto:(NSString *) username{
 
     //self is the TUPhoto
 
-    [self addUniqueObject:uid forKey:@"likedBy"];
+    [self addUniqueObject:username forKey:@"likedBy"];
     [self saveInBackground];
 
     //retrieve the TUUser who likes this TUPhoto
     PFQuery *query = [TUUser query];
-    [query whereKey:@"uid" equalTo:uid];
+    [query whereKey:@"username" equalTo:username];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
@@ -76,11 +82,20 @@
             [tuuser addUniqueObject:self.pid forKey:@"likes"];
             [tuuser saveInBackground];
 
+            //add transaction
+
+
+
+
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+
+
+
+
 }
 
 
@@ -100,32 +115,26 @@
 
     [tucomment saveInBackground];
 
-
+    //add transaction
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
 
 
-//save image to Parse
-
-//NSData *imageData = UIImagePNGRepresentation(image);
-//PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-//
-//PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
-//userPhoto[@"imageName"] = @"My trip to Hawaii!";
-//userPhoto[@"imageFile"] = imageFile;
-//[userPhoto saveInBackground];
-
-
-
-
-//retrieve image from Parse
-//PFFile *userImageFile = anotherPhoto[@"imageFile"];
-//[userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-//    if (!error) {
-//        UIImage *image = [UIImage imageWithData:imageData];
-//    }
-//}];
 
 
 

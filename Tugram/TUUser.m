@@ -13,19 +13,13 @@
 #import <Parse/PFObject+Subclass.h>
 #import "TYUtility.h"
 
-
-
-
-
-
-
 @implementation TUUser
 
 @dynamic uid;
 @dynamic username;
 @dynamic fullName;
 @dynamic profileThumbnailPFFile;
-@dynamic profileThumnailNSData;
+@dynamic profileThumbnailNSData;
 @dynamic followers;
 @dynamic followings;
 @dynamic likes;
@@ -38,29 +32,55 @@
     return @"TUUser";
 }
 
-//init a user for UI
--(instancetype) initWith:(NSString *)username fullname:(NSString *) fullname userProfileImage: (UIImage *) userProfileImage{
 
-    self =[super init];
 
-    if(self)
-    {
-        self.username   =   username;
-        self.fullName   =   fullname;
+//add a user
+-(void) addUser:(TUUser *) user  username:(NSString *)username fullname:(NSString *) fullname{
 
-        //UIImage ->  to Thumbnail -> NSData -> PFFile
-        UIImage *imageThumbnail = [TYUtility imageWithImage:userProfileImage scaledToSize:CGSizeMake(30.0, 30.0)];
-        NSData *imageNSData = UIImagePNGRepresentation(imageThumbnail);
-        PFFile *imagePFFile = [PFFile fileWithName:self.objectId data:imageNSData]; //use uniqe objectId as filename
-        self.profileThumnailNSData = imageNSData;
-        self.profileThumbnailPFFile = imagePFFile;
+    //TUUser *user = [TUUser object];
+    user.uid = user.objectId;
+    user.username   =   username;
+    user.fullName   =   fullname;
 
-        [self saveInBackground];
-
-    }
-
-    return self;
+    [user saveInBackground];
 }
+
+//add user profile image
++(void) addUserProfileImage:(NSString *)username userProfileImage: (UIImage *) userProfileImage {
+
+    //retrieve the TUUser first
+    PFQuery *query = [TUUser query];
+    [query whereKey:@"username" equalTo:username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+
+            //retrieve the TUUser
+            TUUser *tuuser = [objects firstObject];
+
+            NSLog(@"%@", tuuser.username);
+
+            //UIImage ->  to Thumbnail -> NSData -> PFFile
+            UIImage *imageThumbnail = [TYUtility imageWithImage:userProfileImage scaledToSize:CGSizeMake(30.0, 30.0)];
+            NSData *imageNSData = UIImagePNGRepresentation(imageThumbnail);
+            tuuser.profileThumbnailNSData = imageNSData;
+            PFFile *imagePFFile = [PFFile fileWithName:tuuser.objectId data:imageNSData]; //use uniqe objectId as file name
+            tuuser.profileThumbnailPFFile = imagePFFile;
+
+            [tuuser saveInBackground];
+
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+}
+
+
+
+
+
 
 
 -(void) addFollowing: (NSString *) currentUID followingUID:(NSString *) uid{
@@ -82,6 +102,11 @@
                 TUUser *tuuser = [objects firstObject];
                 [tuuser addUniqueObject:currentUID forKey:@"followers"];
                 [tuuser saveInBackground];
+
+                //add transaction
+
+
+
 
             } else {
                 // Log details of the failure

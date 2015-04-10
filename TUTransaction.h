@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "TUPhoto.h"
 
 @interface TUTransaction : PFObject<PFSubclassing>
 
@@ -18,7 +19,7 @@
 
 + (NSString *)parseClassName;
 
--(void) AddTransaction: (NSString *) uid pid:(NSString *) pid type:(NSString *) type;
++(void) addTransaction: (NSString *) uid pid:(NSString *) pid type:(NSString *) type;
 
 @end
 
