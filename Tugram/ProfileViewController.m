@@ -43,6 +43,8 @@
     self.collectionView.layer.borderColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2].CGColor;
     self.collectionView.layer.borderWidth = 2;
 
+    TUPFUser *currentUser = [TUPFUser currentUser];
+    //TUUser *user = [[TUUser alloc]initWith:currentUser.username fullname:currentUser.fullName userProfileImage:self.profilePicture.image];
 
 //    TUPFUser *currentUser = [TUPFUser currentUser];
 //    TUUser *user = [[TUUser add alloc]initWith:currentUser.username fullname:currentUser.fullName userProfileImage:self.profilePicture.image];

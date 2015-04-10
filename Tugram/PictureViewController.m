@@ -11,6 +11,11 @@
 #import "MainViewController.h"
 #import "ImageCellTableViewCell.h"
 
+#import "TUPFUser.h"
+#import "TUUser.h"
+#import "TUPhoto.h"
+#import "TYUtility.h"
+
 
 @interface PictureViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
@@ -117,28 +122,48 @@
 
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage])
     {
-        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        self.imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+//TY
+        //use PFUser currentuser
+        TUPFUser *user = [TUPFUser currentUser];
+        NSLog(@"current user %@", user.username);
+        TUPhoto *photo = [TUPhoto object];
+        photo.pid = photo.objectId;
+        photo.uploadedBy = user.username;
 
+<<<<<<< HEAD
         //NEED TO SAVE IMAGE HERE
         ImageCellTableViewCell *cell = [ImageCellTableViewCell new];
         cell.imageView.image = image;
+=======
+        //image size limit 10M for PFFIle
+>>>>>>> feed
 
-        [cell.imageView setAutoresizingMask:(UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth)];
-        if (self.newMedia)
-            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:finishedSavingWithError:contextInfo:), nil);
+        UIImage *image = [TYUtility imageWithImage:self.imageView.image scaledToSize:CGSizeMake(200.0, 200.0)];
+        NSData *imageData = UIImagePNGRepresentation(image);
+        //photo.imageThumbnailNSData = imageData; <=128kb
+
+        PFFile *imagePFFile = [PFFile fileWithName:photo.objectId data:imageData];
+      //  [imagePFFile saveInBackground];
+
+        photo.imagePFFile = imagePFFile;
+        [photo saveInBackground];
+
+//TY
+
+
+        
+        // go back to first view
+        self.tabBarController.selectedIndex = 0;
+        [self dismissViewControllerAnimated:YES completion:nil];
+
     }
-    else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
-    {
-        UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(mediaType);
-    }
 
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-//    MainViewController *mainVC = [MainViewController new];
-
+<<<<<<< HEAD
 //    [self performSegueWithIdentifier:@"home" sender:self];
+=======
+>>>>>>> feed
 
-//    [self presentViewController:mainVC animated:YES completion:nil];
 
 }
 

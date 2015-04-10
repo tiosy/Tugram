@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ATY-Q4-vyL">
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ATY-Q4-vyL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
@@ -559,6 +560,7 @@
                     <navigationItem key="navigationItem" title="Tugram" id="l3k-wE-A9o"/>
                     <connections>
                         <outlet property="likersTapGesture" destination="Wca-pQ-Cdb" id="ZFn-aR-wFe"/>
+                        <outlet property="tableView" destination="vv2-ri-Xxp" id="kWB-Gb-hUa"/>
                         <outlet property="tapGesture" destination="t1w-qA-hEN" id="4nr-Zj-dd3"/>
                     </connections>
                 </viewController>
@@ -1240,6 +1242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vt3-yK-7CW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-547.5" y="470"/>
             <point key="canvasLocation" x="-274.5" y="475"/>
         </scene>
         <!--Search-->
@@ -1463,7 +1466,8 @@
                                         <exclude reference="pNV-Ai-37U"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="208" width="600" height="392"/>
                                     <mask key="constraints">
                                         <exclude reference="pNV-Ai-37U"/>
                                     </mask>
@@ -1505,7 +1509,8 @@
                                         <exclude reference="lrv-ad-evf"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="401" y="64" width="66" height="30"/>
                                     <mask key="constraints">
                                         <include reference="ds0-sI-nzh"/>
                                         <include reference="lrv-ad-evf"/>
@@ -1531,7 +1536,8 @@
                                         <exclude reference="j1k-Ie-CXg"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="457" y="102" width="45" height="30"/>
                                     <mask key="constraints">
                                         <include reference="BXa-AI-VfI"/>
                                         <include reference="j1k-Ie-CXg"/>
@@ -1556,7 +1562,8 @@
                                         <exclude reference="j5Q-g3-vS1"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="490" y="64" width="66" height="30"/>
                                     <mask key="constraints">
                                         <include reference="Tot-cl-adD"/>
                                         <include reference="j5Q-g3-vS1"/>
@@ -1722,7 +1729,8 @@
                                         <exclude reference="fHi-XR-6yg"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-70" y="28" width="54" height="30"/>
                                     <mask key="constraints">
                                         <include reference="R00-lD-9Yj"/>
                                         <include reference="fHi-XR-6yg"/>
@@ -1821,7 +1829,8 @@
                                         <exclude reference="y5O-cr-QXr"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-70" y="28" width="54" height="30"/>
                                     <mask key="constraints">
                                         <include reference="4Qt-la-hEN"/>
                                         <include reference="y5O-cr-QXr"/>
@@ -1905,9 +1914,10 @@
         <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5kb-pr-3Zq"/>
         <segue reference="Zwc-Fb-BDM"/>
         <segue reference="KZv-UN-3N1"/>
         <segue reference="0p0-KS-woB"/>
+        <segue reference="Adp-Ng-NyU"/>
+        <segue reference="hWZ-AY-6Ha"/>
     </inferredMetricsTieBreakers>
 </document>
