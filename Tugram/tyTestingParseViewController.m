@@ -20,7 +20,7 @@
 
 
 
-@interface tyTestingParseViewController ()
+@interface tyTestingParseViewController () 
 
 @property (weak, nonatomic) IBOutlet UILabel *labelFullName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
@@ -33,6 +33,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+//
+//    TUUser *usr = [TUUser object];
+//    [usr addUser:usr username:@"jeremy" fullname: @"lin"];
+//
+//
+//    NSLog(@"%@",usr);
+//UIImage *img = [UIImage imageNamed:@"person"];
+//    [TUUser addUserProfileImage:@"jeremy" userProfileImage:img];
+
+ UIImage *img = [UIImage imageNamed:@"person"];
+    [TUPhoto addPhoto:img username:@"jeremy"];
+
+
+
 
     //
     //    default test: ADD dummy object to Parse
@@ -54,12 +69,12 @@
     //
 
 
-    // update object/image to Parse
-    [self testUpdateTUUserObjectImage];
-    
-    
-    // Retrieve object/image from Parse
-    [self testRetrieveTUUser];
+//    // update object/image to Parse
+//    [self testUpdateTUUserObjectImage];
+//    
+//    
+//    // Retrieve object/image from Parse
+//    [self testRetrieveTUUser];
 
 
 

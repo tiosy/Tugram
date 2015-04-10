@@ -31,23 +31,3 @@
 //[TUPFUser currentUser]; //return subclass
 
 
-//PFObject *shield = [PFObject objectWithClassName:@"Armor"];
-//shield[@"displayName"] = @"Wooden Shield";
-//shield[@"fireProof"] = @NO;
-//shield[@"rupees"] = @50;
-
-//Armor *shield = [Armor object];
-//shield.displayName = @"Wooden Shield";
-//shield.fireProof = NO;
-//shield.rupees = 50;
-
-
-//query using subclass
-//PFQuery *query = [Armor query];
-//[query whereKey:@"rupees" lessThanOrEqualTo:[PFUser currentUser][@"rupees"]];
-//[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//    if (!error) {
-//        Armor *firstArmor = [objects firstObject];
-//        // ...
-//    }
-//}];

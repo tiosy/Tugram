@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ATY-Q4-vyL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I1Z-Sf-eLF">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Ty Testing Parse View Controller-->
+        <scene sceneID="4cB-Bb-Wv8">
+            <objects>
+                <viewController id="I1Z-Sf-eLF" customClass="tyTestingParseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PbF-Y6-qNS"/>
+                        <viewControllerLayoutGuide type="bottom" id="a9U-Jf-hSZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ESX-u4-6YC">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hc7-t8-4Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345" y="-683"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="SKq-vx-Ok6">
             <objects>
@@ -191,14 +208,14 @@
                                 <exclude reference="off-ou-eHi"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="YaM-dB-IIz"/>
+                                <exclude reference="ZAG-KD-L1R"/>
                                 <exclude reference="TJ6-zJ-OaV"/>
                                 <exclude reference="avu-Nd-j9C"/>
                                 <exclude reference="N4M-Jw-bQQ"/>
                                 <exclude reference="nhA-rL-NMZ"/>
                                 <exclude reference="A4r-vz-7fU"/>
                                 <exclude reference="Jw4-3K-Wr7"/>
-                                <exclude reference="YaM-dB-IIz"/>
-                                <exclude reference="ZAG-KD-L1R"/>
                                 <exclude reference="5sY-IH-Mbf"/>
                                 <exclude reference="n0d-O7-Oxf"/>
                                 <exclude reference="0gQ-Ey-CjS"/>
@@ -215,14 +232,14 @@
                                 <include reference="off-ou-eHi"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="YaM-dB-IIz"/>
+                                <include reference="ZAG-KD-L1R"/>
                                 <include reference="TJ6-zJ-OaV"/>
                                 <include reference="avu-Nd-j9C"/>
                                 <include reference="N4M-Jw-bQQ"/>
                                 <include reference="nhA-rL-NMZ"/>
                                 <include reference="A4r-vz-7fU"/>
                                 <include reference="Jw4-3K-Wr7"/>
-                                <include reference="YaM-dB-IIz"/>
-                                <include reference="ZAG-KD-L1R"/>
                                 <include reference="5sY-IH-Mbf"/>
                                 <include reference="n0d-O7-Oxf"/>
                                 <include reference="0gQ-Ey-CjS"/>
@@ -279,7 +296,8 @@
                                                             <exclude reference="nAA-Du-46n"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="234" y="10" width="78" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="Fzn-8t-3no"/>
                                                             <include reference="nAA-Du-46n"/>
@@ -330,7 +348,8 @@
                                                             <exclude reference="Kl4-Em-Nlz"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="-32" y="47" width="384" height="314"/>
                                                         <mask key="constraints">
                                                             <include reference="5Gd-cr-nvB"/>
                                                             <include reference="Kl4-Em-Nlz"/>
@@ -883,21 +902,21 @@
                                 <exclude reference="Rcs-lw-zYV"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="SuE-EO-VUp"/>
-                                <exclude reference="WHl-zF-tHM"/>
+                                <exclude reference="JLX-Jy-7Ik"/>
                                 <exclude reference="9Bx-di-9ug"/>
                                 <exclude reference="epE-uT-fci"/>
-                                <exclude reference="Ldl-xc-azb"/>
-                                <exclude reference="caS-S0-QrQ"/>
-                                <exclude reference="e07-GA-mct"/>
-                                <exclude reference="1s7-Xs-bBC"/>
                                 <exclude reference="8Sd-am-N9v"/>
                                 <exclude reference="KKk-O1-I71"/>
                                 <exclude reference="NAo-ba-qp2"/>
+                                <exclude reference="1s7-Xs-bBC"/>
                                 <exclude reference="C6a-By-fVL"/>
                                 <exclude reference="Fvc-Vy-fZ8"/>
                                 <exclude reference="QbY-XS-6JO"/>
-                                <exclude reference="JLX-Jy-7Ik"/>
+                                <exclude reference="SuE-EO-VUp"/>
+                                <exclude reference="WHl-zF-tHM"/>
+                                <exclude reference="Ldl-xc-azb"/>
+                                <exclude reference="caS-S0-QrQ"/>
+                                <exclude reference="e07-GA-mct"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -910,21 +929,21 @@
                                 <include reference="Rcs-lw-zYV"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="SuE-EO-VUp"/>
-                                <include reference="WHl-zF-tHM"/>
+                                <include reference="JLX-Jy-7Ik"/>
                                 <include reference="9Bx-di-9ug"/>
                                 <include reference="epE-uT-fci"/>
-                                <include reference="Ldl-xc-azb"/>
-                                <include reference="caS-S0-QrQ"/>
-                                <include reference="e07-GA-mct"/>
-                                <include reference="1s7-Xs-bBC"/>
                                 <include reference="8Sd-am-N9v"/>
                                 <include reference="KKk-O1-I71"/>
                                 <include reference="NAo-ba-qp2"/>
+                                <include reference="1s7-Xs-bBC"/>
                                 <include reference="C6a-By-fVL"/>
                                 <include reference="Fvc-Vy-fZ8"/>
                                 <include reference="QbY-XS-6JO"/>
-                                <include reference="JLX-Jy-7Ik"/>
+                                <include reference="SuE-EO-VUp"/>
+                                <include reference="WHl-zF-tHM"/>
+                                <include reference="Ldl-xc-azb"/>
+                                <include reference="caS-S0-QrQ"/>
+                                <include reference="e07-GA-mct"/>
                             </mask>
                         </variation>
                     </view>
@@ -1166,7 +1185,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="C0Q-Ab-oal"/>
+        <segue reference="Zwc-Fb-BDM"/>
         <segue reference="0p0-KS-woB"/>
     </inferredMetricsTieBreakers>
 </document>

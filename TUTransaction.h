@@ -18,7 +18,7 @@
 
 + (NSString *)parseClassName;
 
--(void) AddTransaction: (NSString *) uid pid:(NSString *) pid type:(NSString *) type;
++(void) addTransaction: (NSString *) uid pid:(NSString *) pid type:(NSString *) type;
 
 @end
 

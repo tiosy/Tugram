@@ -20,7 +20,7 @@
 
 + (NSString *)parseClassName;
 
--(void) addPhoto:(UIImage *) imageUIImage uid: (NSString *) uid;
--(void) likePhoto: (NSString *) uid;
++(void) addPhoto:(UIImage *) imageUIImage username: (NSString *) username;
+-(void) likePhoto: (NSString *) username;
 -(void) commentPhoto: (NSString *) uid comment:(NSString *) comment;
 @end

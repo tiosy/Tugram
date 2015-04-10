@@ -26,17 +26,15 @@
     return @"TUTransaction";
 }
 
--(void) AddTransaction: (NSString *) uid pid:(NSString *) pid type:(NSString *) type{
++(void) addTransaction: (NSString *) uid pid:(NSString *) pid type:(NSString *) type{
 
-    if(self)
-    {
-        self.xtranID = self.objectId;
-        self.pid = pid;
-        self.uid = uid;
-        self.type = type;
-        [self saveInBackground];
+    TUTransaction *xtran = [TUTransaction object];
+    xtran.xtranID = xtran.objectId;
+    xtran.pid = pid;
+    xtran.uid = uid;
+    xtran.type = type;
+    [xtran saveInBackground];
 
-    
 }
 
 @end

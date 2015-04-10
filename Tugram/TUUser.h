@@ -17,20 +17,20 @@
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *fullName;
 @property (nonatomic, strong) PFFile *profileThumbnailPFFile;
-@property (nonatomic, strong) NSData *profileThumnailNSData; //redundant but might improve performance
+@property (nonatomic, strong) NSData *profileThumbnailNSData;
+
 @property (nonatomic, strong) NSArray *followers; //contains NSString *uid
 @property (nonatomic, strong) NSArray *followings; //contains NSString *uid
 @property (nonatomic, strong) NSArray *likes; //contains NSString *pid
 
 + (NSString *)parseClassName;
 
--(instancetype) initWith:(NSString *)username fullname:(NSString *) fullname userProfileImage: (UIImage *) userProfileImage;
 
 //add a user
--(void) addUser: (NSString *)username fullname:(NSString *) fullname;
+-(void) addUser:(TUUser *) user  username:(NSString *)username fullname:(NSString *) fullname;
 
 //add user profile image
--(void) addUserProfileImage:(NSString *) username userProfileImage: (UIImage *) userProfileImage;
++(void) addUserProfileImage:(NSString *)username userProfileImage: (UIImage *) userProfileImage;
 
 -(void) addFollowing: (NSString *) currentUID followingUID:(NSString *) uid;
 

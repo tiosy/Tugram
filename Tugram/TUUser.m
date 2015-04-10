@@ -13,19 +13,13 @@
 #import <Parse/PFObject+Subclass.h>
 #import "TYUtility.h"
 
-
-
-
-
-
-
 @implementation TUUser
 
 @dynamic uid;
 @dynamic username;
 @dynamic fullName;
 @dynamic profileThumbnailPFFile;
-@dynamic profileThumnailNSData;
+@dynamic profileThumbnailNSData;
 @dynamic followers;
 @dynamic followings;
 @dynamic likes;
@@ -38,28 +32,9 @@
     return @"TUUser";
 }
 
-//init a user for UI
--(instancetype) initWith:(NSString *)username fullname:(NSString *) fullname{
-
-    self =[super init];
-
-    if(self)
-    {
-        self.username   =   username;
-        self.fullName   =   fullname;
-
-        [self saveInBackground];
-
-    }
-
-    return self;
-}
 
 
 //add a user
-
-
-//init a user for UI
 -(void) addUser:(TUUser *) user  username:(NSString *)username fullname:(NSString *) fullname{
 
     //TUUser *user = [TUUser object];
@@ -68,15 +43,10 @@
     user.fullName   =   fullname;
 
     [user saveInBackground];
-
 }
 
-
-
-
-
 //add user profile image
--(void) addUserProfileImage:(NSString *) username userProfileImage: (UIImage *) userProfileImage {
++(void) addUserProfileImage:(NSString *)username userProfileImage: (UIImage *) userProfileImage {
 
     //retrieve the TUUser first
     PFQuery *query = [TUUser query];
@@ -88,10 +58,14 @@
             //retrieve the TUUser
             TUUser *tuuser = [objects firstObject];
 
+            NSLog(@"%@", tuuser.username);
+
             //UIImage ->  to Thumbnail -> NSData -> PFFile
             UIImage *imageThumbnail = [TYUtility imageWithImage:userProfileImage scaledToSize:CGSizeMake(30.0, 30.0)];
             NSData *imageNSData = UIImagePNGRepresentation(imageThumbnail);
-            tuuser.profileThumnailNSData = imageNSData;
+            tuuser.profileThumbnailNSData = imageNSData;
+            PFFile *imagePFFile = [PFFile fileWithName:tuuser.objectId data:imageNSData]; //use uniqe objectId as file name
+            tuuser.profileThumbnailPFFile = imagePFFile;
 
             [tuuser saveInBackground];
 
@@ -128,6 +102,11 @@
                 TUUser *tuuser = [objects firstObject];
                 [tuuser addUniqueObject:currentUID forKey:@"followers"];
                 [tuuser saveInBackground];
+
+                //add transaction
+
+
+
 
             } else {
                 // Log details of the failure
