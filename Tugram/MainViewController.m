@@ -27,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+    self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+
     self.tapGesture = [UITapGestureRecognizer new];
     self.tapGesture.delegate = self;
     self.tapGesture.enabled = YES;
@@ -43,6 +46,7 @@
     }
     NSLog(@"%@", currentUser);
 
+    //THIS IS WHERE WE NEED OUR PICTURES
     self.pictures = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"Audis4"], [UIImage imageNamed:@"Beach"], [UIImage imageNamed:@"Sand"], [UIImage imageNamed:@"TennisBall"], nil];
 
 }

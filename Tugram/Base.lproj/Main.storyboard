@@ -242,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="384" y="-916"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Tugram-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
@@ -550,7 +550,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="l3k-wE-A9o"/>
+                    <navigationItem key="navigationItem" title="Tugram" id="l3k-wE-A9o"/>
                     <connections>
                         <outlet property="likersTapGesture" destination="Wca-pQ-Cdb" id="ZFn-aR-wFe"/>
                         <outlet property="tapGesture" destination="t1w-qA-hEN" id="4nr-Zj-dd3"/>
@@ -835,7 +835,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qO8-RI-Xu1">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID" id="qO8-RI-Xu1">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -851,6 +851,10 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="6GO-Xf-tpn" id="2xd-Ww-43V"/>
+                                    <outlet property="delegate" destination="6GO-Xf-tpn" id="2eY-oV-mGB"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -874,10 +878,10 @@
             </objects>
             <point key="canvasLocation" x="1930.5" y="509"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="sVB-UK-Xqn">
             <objects>
-                <viewController id="jfq-M2-Z0N" sceneMemberID="viewController">
+                <viewController id="jfq-M2-Z0N" customClass="ImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7p4-mD-R1X"/>
                         <viewControllerLayoutGuide type="bottom" id="hiW-NT-XDQ"/>
@@ -885,8 +889,44 @@
                     <view key="view" contentMode="scaleToFill" id="T8H-3t-pBk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecL-oo-3A9">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ecL-oo-3A9" firstAttribute="leading" secondItem="T8H-3t-pBk" secondAttribute="leadingMargin" constant="-16" id="YxC-6c-wvZ"/>
+                            <constraint firstItem="ecL-oo-3A9" firstAttribute="top" secondItem="7p4-mD-R1X" secondAttribute="bottom" id="cOt-ZB-CR8"/>
+                            <constraint firstItem="hiW-NT-XDQ" firstAttribute="top" secondItem="ecL-oo-3A9" secondAttribute="bottom" id="cRv-ST-eK7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ecL-oo-3A9" secondAttribute="trailing" constant="-16" id="ft4-s4-P96"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ecL-oo-3A9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="YxC-6c-wvZ"/>
+                                <exclude reference="cOt-ZB-CR8"/>
+                                <exclude reference="ft4-s4-P96"/>
+                                <exclude reference="cRv-ST-eK7"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ecL-oo-3A9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="YxC-6c-wvZ"/>
+                                <include reference="cOt-ZB-CR8"/>
+                                <include reference="ft4-s4-P96"/>
+                                <include reference="cRv-ST-eK7"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ecL-oo-3A9" id="ORe-92-LLX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8DL-TF-7Fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1835,9 +1875,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0p0-KS-woB"/>
+        <segue reference="Ylv-yf-Opi"/>
         <segue reference="C0Q-Ab-oal"/>
-        <segue reference="5kb-pr-3Zq"/>
-        <segue reference="KZv-UN-3N1"/>
+        <segue reference="hWZ-AY-6Ha"/>
+        <segue reference="Adp-Ng-NyU"/>
     </inferredMetricsTieBreakers>
 </document>

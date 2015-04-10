@@ -28,9 +28,12 @@
 }
 
 
--(void)viewDidAppear:(BOOL)animated
+
+
+-(void)viewWillAppear:(BOOL)animated
 {
     [self showAlert];
+    
 }
 
 -(void)showAlert
