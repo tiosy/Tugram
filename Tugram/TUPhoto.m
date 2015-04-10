@@ -62,7 +62,7 @@
 
 }
 
-
+// ???
 -(void) likePhoto:(NSString *) username{
 
     //self is the TUPhoto
@@ -116,9 +116,11 @@
     [tucomment saveInBackground];
 
     //add transaction
-
-
 }
+
+
+
+
 
 
 

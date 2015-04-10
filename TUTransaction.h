@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "TUPhoto.h"
 
 @interface TUTransaction : PFObject<PFSubclassing>
 

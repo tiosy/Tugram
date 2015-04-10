@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I1Z-Sf-eLF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ATY-Q4-vyL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Ty Testing Parse View Controller-->
-        <scene sceneID="4cB-Bb-Wv8">
-            <objects>
-                <viewController id="I1Z-Sf-eLF" customClass="tyTestingParseViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PbF-Y6-qNS"/>
-                        <viewControllerLayoutGuide type="bottom" id="a9U-Jf-hSZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ESX-u4-6YC">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hc7-t8-4Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-345" y="-683"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="SKq-vx-Ok6">
             <objects>
@@ -443,6 +426,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="wrl-AG-qa3"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="HVD-kK-0Rn"/>
@@ -508,6 +494,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="65" width="600" height="535"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="jnh-yA-b4q" id="NAg-aF-8HK"/>
                                     <outlet property="delegate" destination="jnh-yA-b4q" id="4Vm-0f-24p"/>
@@ -559,7 +548,8 @@
                                         <exclude reference="lOk-gl-Wp7"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="554" y="20" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="FSj-F5-o11"/>
                                         <include reference="lOk-gl-Wp7"/>
@@ -1036,6 +1026,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="-24" width="600" height="624"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="8ik-J1-I1W" id="6WP-GE-3zK"/>
                                     <outlet property="delegate" destination="8ik-J1-I1W" id="sZr-YU-cyR"/>

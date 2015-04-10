@@ -10,7 +10,7 @@
 
 @interface TUPhoto : PFObject<PFSubclassing>
 
-//PFUser has email, username, password
+
 @property (nonatomic, strong) NSString *pid; //use TUPhoto's objectId 
 @property (nonatomic, strong) PFFile *imagePFFile;
 @property (nonatomic, strong) NSData *imageThumbnailNSData;
