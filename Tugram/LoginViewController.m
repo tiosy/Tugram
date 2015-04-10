@@ -8,8 +8,10 @@
 
 #import "LoginViewController.h"
 #import "ImageCellTableViewCell.h"
+#import "MainViewController.h"
+#import "TUPFUser.h"
 
-@interface LoginViewController () <UITextFieldDelegate>
+@interface LoginViewController () <UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -23,24 +25,90 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    if (there is a User) {
-//        [self performSegueWithIdentifier:@"login" sender:self];
-//
+//    TUPFUser *user = [TUPFUser currentUser];
+
+
+//    TUPFUser *currentUser = [TUPFUser currentUser];
+
+//    
+//    if (TUPFUser.currentUser) {
+//        [self performSegueWithIdentifier:@"mainfeed" sender:self];
 //    }
-
-
-
+//    else {
+//        [self presentViewController:self animated:YES completion:nil];
+//    }
 }
 
 - (IBAction)onSignUp:(UIButton *)sender
 {
+    TUPFUser *user = [TUPFUser new];
+    user.fullName = self.nameTextField.text;
+    user.username = self.usernameTextField.text;
+    user.password = self.passwordTextField.text;
+    user.email = self.emailTextField.text;
 
-    [self performSegueWithIdentifier:@"signup" sender:self];
-    
+    // other fields can be set just like with PFObject
+//    user[@"phone"] = @"415-392-0202";
+
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (!error)
+        {
+            [user signUp];
+            [self performSegueWithIdentifier:@"mainfeed" sender:self];
+
+
+        } else
+        {
+            NSString *errorString = [error userInfo][@"error"];
+
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Username or Email is incorrect" message:nil preferredStyle:UIAlertControllerStyleAlert];
+
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+
+            }];
+
+            alertController.message = errorString;
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:^{
+                nil;
+            }];
+        }
+    }];
 }
 
 
-- (IBAction)onLogIn:(UIButton *)sender {
+- (IBAction)onLogIn:(UIButton *)sender
+{
+
+    [TUPFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser *user, NSError *error) {
+
+        if (error) {
+            NSLog(@"%@, %@", self.usernameTextField.text, self.passwordTextField.text);
+            NSLog(@"%@", error);
+        }
+
+        if (user)
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        else
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Login Failed" message:nil preferredStyle:UIAlertControllerStyleAlert];
+
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+
+            }];
+
+            alertController.message = @"Username or Email is incorrect";
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:^{
+                nil;
+            }];
+
+        }
+    }];
+
 }
 
 
@@ -54,6 +122,7 @@
     [textField resignFirstResponder];
     return YES;
 }
+
 
 
 /*

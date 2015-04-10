@@ -22,10 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.tapGesture = [UITapGestureRecognizer new];
     self.tapGesture.delegate = self;
+    self.tapGesture.enabled = YES;
+    [self.profilePicture setUserInteractionEnabled:YES];
 
 }
 
+
+- (IBAction)tapGesture:(UITapGestureRecognizer *)sender
+{
+    [self showAlert];
+}
 
 - (IBAction)followersButton:(UIButton *)sender
 {
@@ -45,15 +53,6 @@
 }
 
 
-- (IBAction)segmentedControl:(UISegmentedControl *)sender
-{
-
-}
-
-- (IBAction)tapGesture:(UITapGestureRecognizer *)sender
-{
-    [self showAlert];
-}
 
 
 #pragma MARK - EDIT PROFILE PICTURE
@@ -135,8 +134,7 @@
         self.profilePicture.image = image;
 
         [self.profilePicture setAutoresizingMask:(UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth)];
-//        if (self.newMedia)
-//            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:finishedSavingWithError:contextInfo:), nil);
+
     }
     else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
     {
@@ -144,12 +142,6 @@
     }
 
     [self dismissViewControllerAnimated:YES completion:nil];
-
-    //    MainViewController *mainVC = [MainViewController new];
-
-    [self performSegueWithIdentifier:@"home" sender:self];
-
-    //    [self presentViewController:mainVC animated:YES completion:nil];
 
 }
 
