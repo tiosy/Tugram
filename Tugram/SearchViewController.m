@@ -22,8 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.searchBar.delegate = self;
+
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
     self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.tintColor = [UIColor blackColor];
+
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -48,6 +54,11 @@
     [self.tableView reloadData];
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
+}
 
 //-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 //{

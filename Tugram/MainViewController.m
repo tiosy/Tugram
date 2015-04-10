@@ -28,7 +28,11 @@
     [super viewDidLoad];
 
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"Arial" size:20]}];
+    self.tabBarController.tabBar.tintColor = [UIColor blackColor];
     self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+
 
     self.tapGesture = [UITapGestureRecognizer new];
     self.tapGesture.delegate = self;

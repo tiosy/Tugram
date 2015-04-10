@@ -16,6 +16,7 @@
 
 @property BOOL newMedia;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property BOOL pictureSaved;
 
 @end
 
@@ -24,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.pictureSaved = NO;
 
 }
 
@@ -32,9 +34,17 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self showAlert];
+    if (self.pictureSaved == NO) {
+        self.pictureSaved = YES;
+        [self showAlert];
+    }else
+    {
+        self.pictureSaved = NO;
+
+    }
     
 }
+
 
 -(void)showAlert
 {
@@ -109,6 +119,7 @@
     {
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
+        //NEED TO SAVE IMAGE HERE
         ImageCellTableViewCell *cell = [ImageCellTableViewCell new];
         cell.imageView.image = image;
 
@@ -125,7 +136,7 @@
 
 //    MainViewController *mainVC = [MainViewController new];
 
-    [self performSegueWithIdentifier:@"home" sender:self];
+//    [self performSegueWithIdentifier:@"home" sender:self];
 
 //    [self presentViewController:mainVC animated:YES completion:nil];
 

@@ -28,18 +28,27 @@
 
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
     self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.tintColor = [UIColor blackColor];
+
+    self.profilePicture.layer.borderColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:1].CGColor;
+    self.profilePicture.layer.borderWidth = 2.0;
+    self.profilePicture.backgroundColor = [UIColor whiteColor];
 
     self.tapGesture = [UITapGestureRecognizer new];
     self.tapGesture.delegate = self;
     self.tapGesture.enabled = YES;
     [self.profilePicture setUserInteractionEnabled:YES];
 
+    self.collectionView.layer.borderColor = [UIColor colorWithRed:87/255.0 green:215/255.0 blue:255/255.0 alpha:2].CGColor;
+    self.collectionView.layer.borderWidth = 2;
 
-    TUPFUser *currentUser = [TUPFUser currentUser];
-    TUUser *user = [[TUUser alloc]initWith:currentUser.username fullname:currentUser.fullName userProfileImage:self.profilePicture.image];
 
-    self.nameLabel.text = user.fullName;
-    self.title = user.username;
+//    TUPFUser *currentUser = [TUPFUser currentUser];
+//    TUUser *user = [[TUUser add alloc]initWith:currentUser.username fullname:currentUser.fullName userProfileImage:self.profilePicture.image];
+//
+//    self.nameLabel.text = user.fullName;
+//    self.title = user.username;
 
 }
 
