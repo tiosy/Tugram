@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import "ImageCellTableViewCell.h"
 #import "CommentsViewController.h"
+#import "LoginViewController.h"
+#import "TUPFUser.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,6 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
+    LoginViewController *loginVC = [LoginViewController new];
+    TUPFUser *currentUser = [TUPFUser currentUser];
+    if (!currentUser) {
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
+    NSLog(@"%@", currentUser);
 
     self.pictures = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"Audis4"], [UIImage imageNamed:@"Beach"], [UIImage imageNamed:@"Sand"], [UIImage imageNamed:@"TennisBall"], nil];
 

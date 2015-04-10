@@ -9,6 +9,7 @@
 #import "ImageCellTableViewCell.h"
 #import "LoginViewController.h"
 #import "CommentsViewController.h"
+#import "TUPFUser.h"
 
 
 @implementation ImageCellTableViewCell
