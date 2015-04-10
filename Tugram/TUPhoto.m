@@ -33,7 +33,7 @@
     return @"TUPhoto";
 }
 
--(void) AddPhoto:(UIImage *) imageUIImage uid: (NSString *) uid{
+-(void) addPhoto:(UIImage *) imageUIImage uid: (NSString *) uid{
 
 
     if(self)
